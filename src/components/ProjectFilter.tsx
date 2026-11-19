@@ -10,8 +10,6 @@ interface ProjectFilterProps {
 }
 
 export default function ProjectFilter({
-  sort,
-  onSortChange,
   selectedTech,
   onTechChange,
   techOptions,
