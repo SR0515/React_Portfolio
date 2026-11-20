@@ -16,7 +16,7 @@ export default function ProjectSection({
   search,
 }: ProjectSectionProps) {
   return (
-    <section id="projects" className="mt-10 scroll-mt-28">
+    <section id="projects" className="mt-5 scroll-mt-28">
       <div className="mb-6 flex items-end justify-between">
         <div>
           <p className="mb-1 text-xs font-bold tracking-widest text-[#346AFF]">
@@ -26,7 +26,7 @@ export default function ProjectSection({
             {search ? '검색 결과' : '추천 프로젝트'}
           </h2>
           <p className="mt-1 text-sm text-gray-500">
-            직접 기획하고 구현한 프로젝트를 소개합니다.
+            현재까지의 경력 프로젝트를 소개합니다.
           </p>
         </div>
 

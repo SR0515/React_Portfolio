@@ -15,7 +15,7 @@ export default function Main() {
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedTech, setSelectedTech] = useState('all');
-  const [sort, setSort] = useState('latest');
+  const [sort, setSort] = useState('oldest');
 
   const { wishlist, toggleWishlist } = useWishlist();
 
@@ -65,7 +65,7 @@ export default function Main() {
   }, [search, selectedCategory, selectedTech, sort]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header
         search={search}
         onSearchChange={setSearch}
@@ -77,29 +77,31 @@ export default function Main() {
         onSelect={setSelectedCategory}
       />
 
-      <main className="mx-auto max-w-[1200px] px-5 pb-20">
+      <main className="mx-auto">
         <MainBanner />
 
-        <div className="mt-10">
-          <ProjectFilter
-            sort={sort}
-            onSortChange={setSort}
-            selectedTech={selectedTech}
-            onTechChange={setSelectedTech}
-            techOptions={techOptions}
-            resultCount={filteredProjects.length}
+        <div className="mx-auto max-w-[1200px] px-5">
+          <div className="mt-5 w-full sm:ml-auto sm:w-[30%]">
+            <ProjectFilter
+              sort={sort}
+              onSortChange={setSort}
+              selectedTech={selectedTech}
+              onTechChange={setSelectedTech}
+              techOptions={techOptions}
+              resultCount={filteredProjects.length}
+            />
+          </div>
+
+          <ProjectSection
+            projects={filteredProjects}
+            wishlist={wishlist}
+            onToggleWishlist={toggleWishlist}
+            search={search}
           />
+
+          <TechSection />
+          <JournalSection />
         </div>
-
-        <ProjectSection
-          projects={filteredProjects}
-          wishlist={wishlist}
-          onToggleWishlist={toggleWishlist}
-          search={search}
-        />
-
-        <TechSection />
-        <JournalSection />
       </main>
 
       <Footer />

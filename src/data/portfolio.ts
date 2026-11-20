@@ -1,11 +1,55 @@
+// 프로젝트 1. 통합 숙박 예약 시스템
+import jienemMain from '@/assets/projects/jienem/main.png';
+import jienem1 from '@/assets/projects/jienem/jienem1.png';
+import jienemDetail from '@/assets/projects/jienem/detail.png';
+import jienemMap1 from '@/assets/projects/jienem/map1.png';
+import jienemMap2 from '@/assets/projects/jienem/map2.png';
+
+// 프로젝트 2. 정산 시스템
+import v1Main from '@/assets/projects/v1/main.png';
+import drag1 from '@/assets/projects/v1/drag1.png';
+import drag2 from '@/assets/projects/v1/drag2.png';
+import commission from '@/assets/projects/v1/commission.png';
+import storeSettlement from '@/assets/projects/v1/store_settlement.png';
+import storeSettlementDetail from '@/assets/projects/v1/store_settlement_detail.png';
+import setting from '@/assets/projects/v1/setting.png';
+
+// 프로젝트 3. 트루온 멀티도메인
+import truonMain from '@/assets/projects/truon/truon_main1.png';
+import truonSub from '@/assets/projects/truon/truon_sub1.png';
+import truonUser from '@/assets/projects/truon/truon_user1.png';
+import truonAdmin1 from '@/assets/projects/truon/truon_admin1.png';
+import truonAdmin2 from '@/assets/projects/truon/truon_admin2.png';
+import truonAdmin3 from '@/assets/projects/truon/truon_admin3.png';
+import truonAdmin4 from '@/assets/projects/truon/truon_admin4.png';
+import truonAdmin5 from '@/assets/projects/truon/truon_admin5.png';
+
+// 프로젝트 4. 쇼핑몰 상품 데이터 자동 수집 시스템
+import crawling1 from '@/assets/projects/crawling/python_img1.png';
+import crawling2 from '@/assets/projects/crawling/python_img2.png';
+import crawling3 from '@/assets/projects/crawling/python_img3.png';
+
+// 프로젝트 6. 쇼핑몰 퍼블리싱
+import shoppingmall1 from '@/assets/projects/shop/shoppingmall_1.png';
+import shoppingmall2 from '@/assets/projects/shop/shoppingmall_2.png';
+import shoppingmall3 from '@/assets/projects/shop/shoppingmall_3.png';
+import shoppingmall4 from '@/assets/projects/shop/shoppingmall_4.png';
+
+// 프로젝트 7. Flutter 기반 결제 애플리케이션
+import flutterMain from '@/assets/projects/flutter/main.png';
+import flutterLoginDark from '@/assets/projects/flutter/login_dark.png';
+import flutterLoginLight from '@/assets/projects/flutter/login_light.png';
+import flutterModal from '@/assets/projects/flutter/modal.png';
+import flutterSubPage from '@/assets/projects/flutter/sub_page.png';
+
 
 export interface Project {
   id: number;
   title: string;
   description: string;
   overview: string;
-  category: 'frontend' | 'fullstack' | 'design';
-  image?: string;
+  category: 'frontend' | 'fullstack' | 'crawling' | 'publishing' | 'design';
+  images?: string[];
   period: string;
   role: string;
   stack: string[];
@@ -22,6 +66,13 @@ export const projects: Project[] = [
     overview:
       '다양한 숙박 시설을 통합 검색하고 예약할 수 있는 플랫폼의 프론트엔드 개발을 담당했습니다. Figma 디자인을 기반으로 모바일 중심의 반응형 UI를 구현하고, REST API 연동, 전역 상태 관리, 다국어 환경을 구축하여 사용자 중심의 예약 경험을 제공했습니다.',
     category: 'frontend',
+    images: [
+        jienemMain,
+        jienem1,
+        jienemDetail,
+        jienemMap1,
+        jienemMap2,
+    ],
     period: '실제 프로젝트 기간 입력',
     role: 'Frontend Developer',
     stack: [
@@ -55,6 +106,15 @@ export const projects: Project[] = [
     overview:
       '기존 Classic ASP 기반 정산 시스템을 SvelteKit 및 Node.js 기반으로 고도화하는 프로젝트에 참여했습니다. 관리자, 파트너, 가맹점 시스템의 프론트엔드와 백엔드를 개발하고, TypeScript 기반의 구조 개선과 데이터 관리 기능을 구현했습니다.',
     category: 'fullstack',
+    images: [
+        v1Main,
+        drag1,
+        drag2,
+        commission,
+        storeSettlement,
+        storeSettlementDetail,
+        setting,
+    ],
     period: '실제 프로젝트 기간 입력',
     role: 'Full-stack Developer',
     stack: [
@@ -87,6 +147,16 @@ export const projects: Project[] = [
     overview:
       '단일 소스 코드 기반으로 여러 도메인을 운영할 수 있는 홈페이지와 관리자 시스템을 구축했습니다. 도메인별 유입 분석을 위한 라우팅 구조를 설계하고, QR 유입 로그 수집 및 통계 대시보드와 리소스 생성 자동화 기능을 개발했습니다.',
     category: 'fullstack',
+    images: [
+        truonMain,
+        truonSub,
+        truonUser,
+        truonAdmin1,
+        truonAdmin2,
+        truonAdmin3,
+        truonAdmin4,
+        truonAdmin5,
+    ],
     period: '실제 프로젝트 기간 입력',
     role: 'Full-stack Developer',
     stack: [
@@ -115,7 +185,12 @@ export const projects: Project[] = [
       'Selenium과 Requests를 활용한 쇼핑몰 상품 정보 자동 수집 및 데이터 적재 시스템',
     overview:
       '여러 쇼핑몰의 상품 정보를 자동으로 수집하고 데이터베이스에 적재하는 데이터 수집 시스템을 구축했습니다. Selenium을 통한 로그인 및 세션 관리와 Requests 기반 데이터 수집을 조합하고, 수집 데이터를 정제하여 PostgreSQL에 저장하는 프로세스를 개발했습니다.',
-    category: 'fullstack',
+    category: 'crawling',
+    images: [
+        crawling1,
+        crawling2,
+        crawling3,
+    ],
     period: '실제 프로젝트 기간 입력',
     role: 'Backend Developer',
     stack: [
@@ -139,34 +214,6 @@ export const projects: Project[] = [
 
   {
     id: 5,
-    title: '반응형 웹 서비스 구축',
-    description:
-      '기업 홈페이지 및 웹 플랫폼의 반응형 UI와 다국어 서비스 개발',
-    overview:
-      '기업 홈페이지 및 웹 플랫폼 구축 프로젝트에 참여하여 다양한 디바이스에 대응하는 반응형 UI와 다국어 서비스를 개발했습니다. 공통 컴포넌트를 구성하고 Google Translation API와 react-i18next를 연동하여 다국어 환경을 구현했습니다.',
-    category: 'frontend',
-    period: '실제 프로젝트 기간 입력',
-    role: 'Frontend Developer',
-    stack: [
-      'React',
-      'JavaScript',
-      'Node.js',
-      'CSS',
-      'react-i18next',
-      'Google Translation API',
-    ],
-    responsibilities: [
-      'React 기반 웹 UI 및 공통 컴포넌트 개발',
-      'Mobile, Tablet, PC 대응 반응형 레이아웃 구현',
-      'react-i18next 기반 다국어 환경 구축',
-      'Google Translation API 연동',
-      '실시간 다국어 콘텐츠 처리 기능 개발',
-    ],
-    badge: 'WEB',
-  },
-
-  {
-    id: 6,
     title: '결제 솔루션 관리자 시스템',
     description:
       '관리자, 파트너, 가맹점용 결제 및 정산 관리 웹 시스템',
@@ -191,13 +238,19 @@ export const projects: Project[] = [
   },
 
   {
-    id: 7,
+    id: 6,
     title: '쇼핑몰 구축 및 운영 시스템',
     description:
       '쇼핑몰 주문, 회원, 결제 기능 및 관리자 운영 시스템 개발',
     overview:
       '쇼핑몰 구축 프로젝트에서 주문, 회원, 결제 관련 화면을 개발하고 관리자 기능을 개선했습니다. 기존 쇼핑몰 운영 시스템을 유지보수하고 그누보드 기반 기능을 프로젝트 요구사항에 맞게 커스터마이징했습니다.',
-    category: 'frontend',
+    category: 'publishing',
+    images: [
+        shoppingmall1,
+        shoppingmall2,
+        shoppingmall3,
+        shoppingmall4,
+    ],
     period: '실제 프로젝트 기간 입력',
     role: 'Web Developer',
     stack: [
@@ -217,13 +270,20 @@ export const projects: Project[] = [
   },
 
   {
-    id: 8,
+    id: 7,
     title: 'Flutter 기반 결제 애플리케이션 UI 개발',
     description:
       'Flutter Widget을 활용한 모바일 결제 솔루션 애플리케이션 UI 개발',
     overview:
       'Flutter 기반 결제 솔루션 모바일 애플리케이션 개발에 참여했습니다. Flutter Widget을 활용하여 모바일 UI를 구현하고 Android Emulator 환경에서 화면 동작과 레이아웃을 테스트했습니다.',
-    category: 'frontend',
+    category: 'publishing',
+    images: [
+        flutterMain,
+        flutterLoginDark,
+        flutterLoginLight,
+        flutterModal,
+        flutterSubPage,
+    ],
     period: '실제 프로젝트 기간 입력',
     role: 'Mobile UI Developer',
     stack: [

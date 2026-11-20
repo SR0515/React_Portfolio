@@ -1,29 +1,52 @@
 
+import { useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import type { Swiper as SwiperInstance } from 'swiper';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import GNB from '@/components/GNB';
+
 import { projects } from '@/data/portfolio';
 import useWishlist from '@/hooks/useWishlist';
-import GNB from '@/components/GNB';
-import { Heart } from 'lucide-react';
-
 
 export default function ProjectDetail() {
   const { id } = useParams();
+
   const project = projects.find((item) => item.id === Number(id));
 
   const { wishlist, toggleWishlist } = useWishlist();
 
+  const swiperRef = useRef<SwiperInstance | null>(null);
+
   if (!project) {
     return (
       <div className="min-h-screen">
-        <Header search="" onSearchChange={() => {}} wishlistCount={wishlist.length} />
+        <Header
+          search=""
+          onSearchChange={() => {}}
+          wishlistCount={wishlist.length}
+        />
 
         <main className="mx-auto flex min-h-[60vh] max-w-[1200px] flex-col items-center justify-center px-5">
           <p className="mb-3 text-5xl">🔍</p>
-          <h1 className="text-xl font-bold">프로젝트를 찾을 수 없습니다.</h1>
-          <Link to="/" className="mt-5 text-sm font-semibold text-[#346AFF]">
-            메인으로 돌아가기 →
+
+          <h1 className="text-xl font-bold">
+            프로젝트를 찾을 수 없습니다.
+          </h1>
+
+          <Link
+            to="/"
+            className="mt-5 text-sm font-semibold text-[#346AFF]"
+          >
+            메인으로
           </Link>
         </main>
 
@@ -33,9 +56,10 @@ export default function ProjectDetail() {
   }
 
   const isWishlisted = wishlist.includes(project.id);
+  const images = project.images ?? [];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header
         search=""
         onSearchChange={() => {}}
@@ -46,25 +70,77 @@ export default function ProjectDetail() {
         <GNB title={project.title} />
 
         <article className="overflow-hidden rounded-xl border border-gray-200 bg-white">
-          <div className="relative aspect-video">
-            {project.image && (
-              <img
-                src={project.image}
-                alt={project.title}
-                className="h-full w-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
+
+          {/* 프로젝트 이미지 갤러리 */}
+          <div className="relative w-full overflow-hidden bg-gray-100">
+            {images.length > 0 ? (
+              <>
+                <Swiper
+                    modules={[Pagination]}
+                    slidesPerView={1}
+                    spaceBetween={0}
+                    pagination={
+                        images.length > 1
+                        ? { clickable: true }
+                        : false
+                    }
+                    loop={images.length > 1}
+                    onSwiper={(swiper) => {
+                        swiperRef.current = swiper;
+                    }}
+                    className="w-full"
+                >
+                    {images.map((image, index) => (
+                        <SwiperSlide key={`${project.id}-${index}`}>
+                            <div className="flex w-full items-start justify-center bg-gray-100">
+                                <img
+                                src={image}
+                                alt={`${project.title} 이미지 ${index + 1}`}
+                                className="block h-auto max-h-[900px] w-full object-contain"
+                                />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+
+                {/* 이전 / 다음 버튼 */}
+                {images.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => swiperRef.current?.slidePrev()}
+                      aria-label="이전 이미지"
+                      className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white/95 text-gray-700 shadow-md transition-all duration-200 hover:scale-110 hover:border-[#346AFF] hover:bg-[#346AFF] hover:text-white"
+                    >
+                      <ChevronLeft size={22} strokeWidth={2.5} />
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => swiperRef.current?.slideNext()}
+                      aria-label="다음 이미지"
+                      className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white/95 text-gray-700 shadow-md transition-all duration-200 hover:scale-110 hover:border-[#346AFF] hover:bg-[#346AFF] hover:text-white"
+                    >
+                      <ChevronRight size={22} strokeWidth={2.5} />
+                    </button>
+                  </>
+                )}
+              </>
+            ) : (
+              <div className="flex h-full items-center justify-center text-sm text-gray-400">
+                프로젝트 이미지 준비 중
+              </div>
             )}
 
+            {/* 프로젝트 배지 */}
             {project.badge && (
-              <span className="absolute left-5 top-5 rounded-md bg-[#346AFF] px-3 py-1.5 text-xs font-bold text-white">
+              <span className="absolute left-5 top-5 z-10 rounded-md bg-[#346AFF] px-3 py-1.5 text-xs font-bold text-white">
                 {project.badge}
               </span>
             )}
           </div>
 
+          {/* 프로젝트 상세 정보 */}
           <div className="p-6 sm:p-10">
             <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-gray-400">
               <span>{project.role}</span>
@@ -75,31 +151,38 @@ export default function ProjectDetail() {
             </div>
 
             <div className="flex items-start justify-between gap-4">
-                <h1 className="text-2xl font-bold leading-tight text-gray-900 sm:text-3xl">
-                    {project.title}
-                </h1>
+              <h1 className="text-2xl font-bold leading-tight text-gray-900 sm:text-3xl">
+                {project.title}
+              </h1>
 
-                <button
-                    type="button"
-                    onClick={() => toggleWishlist(project.id)}
-                    aria-label={isWishlisted ? '찜 해제' : '찜하기'}
-                    aria-pressed={isWishlisted}
-                    className="flex shrink-0 items-center text-sm transition hover:border-red-200 hover:bg-red-50"
+              {/* 찜하기 */}
+              <button
+                type="button"
+                onClick={() => toggleWishlist(project.id)}
+                aria-label={isWishlisted ? '찜 해제' : '찜하기'}
+                aria-pressed={isWishlisted}
+                className="flex shrink-0 items-center gap-2 rounded-lg border border-gray-200 px-3 py-2 text-sm transition hover:border-red-200 hover:bg-red-50"
+              >
+                <Heart
+                  size={18}
+                  strokeWidth={2}
+                  className={`transition-colors ${
+                    isWishlisted
+                      ? 'fill-red-500 text-red-500'
+                      : 'text-gray-400'
+                  }`}
+                />
+
+                <span
+                  className={
+                    isWishlisted
+                      ? 'font-semibold text-red-500'
+                      : 'text-gray-600'
+                  }
                 >
-                    <Heart
-                        size={18}
-                        strokeWidth={2}
-                        className={`transition-colors ${
-                            isWishlisted
-                            ? 'fill-red-500 text-red-500'
-                            : 'text-gray-400'
-                        }`}
-                    />
-
-                    <span className={isWishlisted ? 'font-semibold text-red-500' : 'text-gray-600'}>
-                        {isWishlisted}
-                    </span>
-                </button>
+                  {isWishlisted ? '찜 완료' : '찜하기'}
+                </span>
+              </button>
             </div>
 
             <p className="mt-4 leading-7 text-gray-600">
@@ -108,6 +191,7 @@ export default function ProjectDetail() {
 
             <div className="my-8 border-t border-gray-100" />
 
+            {/* 사용 기술 */}
             <section>
               <h2 className="mb-4 text-lg font-bold text-gray-900">
                 사용 기술
@@ -125,6 +209,7 @@ export default function ProjectDetail() {
               </div>
             </section>
 
+            {/* 주요 구현 기능 */}
             <section className="mt-10">
               <h2 className="mb-4 text-lg font-bold text-gray-900">
                 주요 구현 기능
@@ -132,19 +217,23 @@ export default function ProjectDetail() {
 
               <ul className="space-y-3">
                 {project.responsibilities.map((responsibility, index) => (
-                    <li
-                        key={index}
-                        className="flex items-start gap-3 text-sm leading-6 text-gray-600"
-                    >
-                        <span className="mt-0.5 font-bold text-[#346AFF]">✓</span>
-                        {responsibility}
-                    </li>
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-sm leading-6 text-gray-600"
+                  >
+                    <span className="mt-0.5 font-bold text-[#346AFF]">
+                      ✓
+                    </span>
+
+                    {responsibility}
+                  </li>
                 ))}
               </ul>
             </section>
           </div>
         </article>
 
+        {/* 다른 프로젝트 보기 */}
         <div className="mt-8 text-center">
           <Link
             to="/"
