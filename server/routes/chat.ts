@@ -1,6 +1,6 @@
 
 import { Router } from 'express';
-import { createChatReply } from '../services/ai';
+import { createChatReply } from '../services/ai.js';
 
 const router = Router();
 

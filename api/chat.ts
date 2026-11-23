@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { createChatReply } from '../server/services/ai';
+import { createChatReply } from '../server/services/ai.js';
 
 interface ChatTurn {
   role: 'user' | 'ai';
