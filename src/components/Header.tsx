@@ -50,7 +50,7 @@ export default function Header({
         </div>
 
         {/* 오른쪽 메뉴 */}
-        <div className="flex shrink-0 items-center gap-5">
+        <div className="ml-auto flex shrink-0 items-center gap-5">
           <Link
             to="/wishlist"
             className="relative flex items-center text-gray-600 transition hover:text-[#346AFF]"
@@ -65,7 +65,7 @@ export default function Header({
           </Link>
 
           <Link
-            to="/#about"
+            to="/mypage"
             className="flex items-center text-gray-600 transition hover:text-[#346AFF]"
           >
             <UserRound size={23} strokeWidth={1.8} />

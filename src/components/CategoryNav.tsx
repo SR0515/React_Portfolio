@@ -56,15 +56,6 @@ export default function CategoryNav({
           <BookOpen size={16} strokeWidth={2} />
           개발 블로그
         </a>
-
-        {/* About Me */}
-        <a
-          href="#about"
-          className="flex shrink-0 items-center gap-2 rounded-full px-5 py-2 text-sm font-medium text-gray-600 transition hover:bg-blue-50 hover:text-[#346AFF]"
-        >
-          <UserRound size={16} strokeWidth={2} />
-          About Me
-        </a>
       </div>
     </nav>
   );

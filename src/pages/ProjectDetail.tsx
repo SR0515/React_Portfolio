@@ -145,8 +145,6 @@ export default function ProjectDetail() {
             <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-gray-400">
               <span>{project.role}</span>
               <span>·</span>
-              <span>{project.period}</span>
-              <span>·</span>
               <span>{project.category}</span>
             </div>
 
@@ -161,7 +159,7 @@ export default function ProjectDetail() {
                 onClick={() => toggleWishlist(project.id)}
                 aria-label={isWishlisted ? '찜 해제' : '찜하기'}
                 aria-pressed={isWishlisted}
-                className="flex shrink-0 items-center gap-2 rounded-lg border border-gray-200 px-3 py-2 text-sm transition hover:border-red-200 hover:bg-red-50"
+                className="flex shrink-0 items-center gap-2  px-3 py-2 text-sm"
               >
                 <Heart
                   size={18}
@@ -180,7 +178,7 @@ export default function ProjectDetail() {
                       : 'text-gray-600'
                   }
                 >
-                  {isWishlisted ? '찜 완료' : '찜하기'}
+                  {isWishlisted}
                 </span>
               </button>
             </div>

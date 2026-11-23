@@ -4,6 +4,7 @@ import { Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import type { Swiper as SwiperInstance } from 'swiper';
+import toast from 'react-hot-toast';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -22,12 +23,22 @@ export default function ProjectCard({
   onToggleWishlist,
 }: ProjectCardProps) {
   const images = project.images ?? [];
+
+  const handleWishlist = () => {
+    onToggleWishlist(project.id);
+
+    if (isWishlisted) {
+      toast('관심 프로젝트에서 삭제했어요.');
+    } else {
+      toast.success('관심 프로젝트에 추가했어요.');
+    }
+  };
   
   // 현재 프로젝트 카드의 Swiper 인스턴스
   const swiperRef = useRef<SwiperInstance | null>(null);
 
   return (
-    <article className="group overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg">
+    <article className="group overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:border-blue-200 hover:shadow-lg">
 
       {/* 프로젝트 이미지 슬라이드 */}
       <div className="project-card-swiper relative aspect-[4/3] overflow-hidden bg-gray-100">
@@ -59,7 +70,6 @@ export default function ProjectCard({
                 ))}
             </Swiper>
 
-            {/* 이전 버튼 */}
             {images.length > 1 && (
                 <>
                 <button
@@ -71,7 +81,6 @@ export default function ProjectCard({
                     <ChevronLeft size={20} strokeWidth={2.5} />
                 </button>
 
-                {/* 다음 버튼 */}
                 <button
                     type="button"
                     onClick={() => swiperRef.current?.slideNext()}
@@ -99,7 +108,8 @@ export default function ProjectCard({
         {/* 찜하기 버튼 */}
         <button
             type="button"
-            onClick={() => onToggleWishlist(project.id)}
+            // onClick={() => onToggleWishlist(project.id)}
+            onClick={handleWishlist}
             aria-label={isWishlisted ? '찜 해제' : '찜하기'}
             aria-pressed={isWishlisted}
             className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center"
@@ -131,7 +141,7 @@ export default function ProjectCard({
         </p>
 
         {/* 기술 스택 */}
-        <div className="mb-4 flex flex-wrap gap-1.5">
+        <div className="mb-4 flex flex-wrap items-start gap-1.5 h-[54px]">
           {project.stack.map((tech) => (
             <span
               key={tech}

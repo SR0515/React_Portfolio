@@ -78,7 +78,7 @@ export default function Main() {
       />
 
       <main className="mx-auto">
-        <MainBanner />
+        {selectedCategory === 'all' && <MainBanner />}
 
         <div className="mx-auto max-w-[1200px] px-5">
           <div className="mt-5 w-full sm:ml-auto sm:w-[30%]">

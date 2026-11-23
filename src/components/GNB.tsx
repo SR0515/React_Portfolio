@@ -7,7 +7,7 @@ interface GNBProps {
 
 export default function GNB({ title }: GNBProps) {
   return (
-    <nav className="mb-6 flex h-12 items-center justify-between border-b border-gray-200">
+    <nav className="mb-6 flex h-12 items-center justify-between">
       <div className="flex items-center gap-2">
         <Link
           to="/"

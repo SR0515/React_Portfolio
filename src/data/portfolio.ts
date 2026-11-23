@@ -42,6 +42,22 @@ import flutterLoginLight from '@/assets/projects/flutter/login_light.png';
 import flutterModal from '@/assets/projects/flutter/modal.png';
 import flutterSubPage from '@/assets/projects/flutter/sub_page.png';
 
+// 프로젝트 8. 웹디자인 포토샵 이미지
+import ars1 from '@/assets/projects/photoshop/ars_1.jpg';
+import ars2 from '@/assets/projects/photoshop/ars_2.jpg';
+import ars3 from '@/assets/projects/photoshop/ars_3.jpg';
+import ars4 from '@/assets/projects/photoshop/ars_4.jpg';
+import dhpay1 from '@/assets/projects/photoshop/dh_pay_1.png';
+import dhpay2 from '@/assets/projects/photoshop/dh_pay2.png';
+import obconevent1 from '@/assets/projects/photoshop/obcon_event_1.png';
+import obconevent2 from '@/assets/projects/photoshop/obcon_event_banner2.png';
+import obconevent3 from '@/assets/projects/photoshop/obcon_event_3.png';
+import obconevent4 from '@/assets/projects/photoshop/obcon_event_banner4.png';
+import obconEventDetail from '@/assets/projects/photoshop/obcon_event_detail.png';
+import obconCoupon from '@/assets/projects/photoshop/obcon_cupon.png';
+import obconBanner from '@/assets/projects/photoshop/obcon_banner1.png';
+
+
 
 export interface Project {
   id: number;
@@ -298,6 +314,41 @@ export const projects: Project[] = [
     ],
     badge: 'MOBILE',
   },
+  {
+    id: 8,
+    title: 'Photoshop 기반 웹디자인',
+    description:
+        'Photoshop을 활용한 웹 디자인 및 시각 콘텐츠 제작',
+    overview:
+        'Photoshop을 활용하여 웹 서비스에 필요한 디자인 작업을 진행했습니다. 시각적 완성도와 사용자 경험을 고려한 웹 디자인 작업을 수행했습니다.',
+    category: 'design',
+    images: [
+        ars1,
+        ars2,
+        ars3,
+        ars4,
+        dhpay1,
+        dhpay2,
+        obconevent1,
+        obconevent2,
+        obconevent3,
+        obconevent4,
+        obconEventDetail,
+        obconCoupon,
+        obconBanner
+    ],
+    period: '실제 작업 기간 입력',
+    role: 'Web Designer',
+    stack: [
+        'Photoshop',
+    ],
+    responsibilities: [
+        'Photoshop을 활용한 웹 디자인 작업',
+        '웹 화면의 레이아웃 및 시각적 요소 디자인',
+        '디자인 요소와 색상, 타이포그래피 구성',
+    ],
+    badge: 'DESIGN',
+  },
 ];
 
 export const skills = [
@@ -323,7 +374,6 @@ export const skills = [
       'Sequelize',
       'REST API',
       'Classic ASP',
-      'PHP',
     ],
   },
   {

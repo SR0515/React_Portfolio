@@ -14,7 +14,7 @@ export default function Wishlist() {
   );
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen bg-white">
       <Header
         search=""
         onSearchChange={() => {}}
