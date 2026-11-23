@@ -358,7 +358,7 @@ export default function MyPage() {
                         </a> */}
 
                         <a
-                        href="https://github.com/"
+                        href="https://github.com/SR0515/React_Portfolio"
                         target="_blank"
                         rel="noreferrer"
                         className="flex items-center justify-between rounded-xl border border-gray-100 p-4 transition hover:border-blue-200 hover:bg-blue-50/40"

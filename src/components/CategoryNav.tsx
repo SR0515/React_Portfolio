@@ -5,7 +5,6 @@ import {
   Server,
   Palette,
   BookOpen,
-  UserRound,
 } from 'lucide-react';
 
 interface CategoryNavProps {
