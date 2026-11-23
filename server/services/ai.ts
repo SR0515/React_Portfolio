@@ -2,7 +2,7 @@ import { GoogleGenAI } from '@google/genai';
 import {
   DEV_RESUME_CONTEXT,
   SYSTEM_INSTRUCTION,
-} from '../data/portfolioContext';
+} from '../data/portfolioContext.js';
 
 const apiKey = process.env.GEMINI_API_KEY;
 
@@ -40,10 +40,10 @@ export async function createChatReply(
     contents,
     config: {
       systemInstruction: `
-${SYSTEM_INSTRUCTION}
+        ${SYSTEM_INSTRUCTION}
 
-[개발자 이력서 정보]
-${DEV_RESUME_CONTEXT}
+        [개발자 이력서 정보]
+        ${DEV_RESUME_CONTEXT}
       `,
       temperature: 0.3,
       maxOutputTokens: 8192,
