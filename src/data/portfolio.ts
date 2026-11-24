@@ -111,7 +111,7 @@ export const projects: Project[] = [
       'Kakao Map API 기반 지도 탐색 및 마커 인터랙션 구현',
       'i18next 기반 한국어, 영어, 일본어, 중국어 4개국어 환경 구축',
     ],
-    badge: 'LATEST',
+    badge: 'Frontend',
   },
 
   {
@@ -189,7 +189,7 @@ export const projects: Project[] = [
       'PostgreSQL 데이터베이스 연동',
       'QR 유입 분석 로그 수집 알고리즘 구현',
       '관리자 통계 대시보드 개발',
-      'Python 기반 QR 코드 및 SVG 리소스 생성 자동화',
+      'Python 기반 QR 코드 및 SVG 리소스 생성',
     ],
     badge: 'PLATFORM',
   },

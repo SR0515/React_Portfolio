@@ -1,0 +1,32 @@
+{
+  "_comment1": "=== 공통 컴포넌트 - 헤더 번역  ===",
+  "header": {
+    "searchPlaceholder": "搜索项目和技术栈。",
+    "search": "搜索",
+    "language": "选择语言",
+    "wishlist": "收藏夹",
+    "myPage": "我的主页"
+  },
+
+  "_comment2": "=== 공통 컴포넌트 - 메인배너 번역  ===",
+  "mainBanner": {
+    "badge": "FRONTEND DEVELOPER PORTFOLIO",
+    "titleLine1": "专注于用户体验，",
+    "titleHighlight": "将设计转化为代码",
+    "titleLine2": "创造更好的体验。",
+    "greeting": "你好！",
+    "descriptionLine1": "凭借网页设计经验，我深入理解 UI/UX，",
+    "descriptionLine2": "并运用多种技术打造高品质的 Web 服务。",
+    "button": "查看项目",
+    "keywords": "Frontend · Full Stack · UI/UX"
+  },
+
+  "_comment3": "=== 공통 컴포넌트 - 카테고리nav 번역  ===",
+  "categoryNav": {
+    "all": "全部项目",
+    "frontend": "Frontend",
+    "fullstack": "Full Stack",
+    "design": "Design",
+    "blog": "开发博客"
+  }
+}

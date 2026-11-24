@@ -79,25 +79,23 @@ export default function ProjectDetail() {
                     modules={[Pagination]}
                     slidesPerView={1}
                     spaceBetween={0}
-                    pagination={
-                        images.length > 1
-                        ? { clickable: true }
-                        : false
-                    }
+                    pagination={images.length > 1 ? { clickable: true } : false}
                     loop={images.length > 1}
-                    onSwiper={(swiper) => {
-                        swiperRef.current = swiper;
-                    }}
-                    className="w-full"
+                    onSwiper={(swiper) => {swiperRef.current = swiper;}}
+                    className="h-[900px] w-full"
                 >
                     {images.map((image, index) => (
                         <SwiperSlide key={`${project.id}-${index}`}>
-                            <div className="flex w-full items-start justify-center bg-gray-100">
-                                <img
-                                src={image}
-                                alt={`${project.title} 이미지 ${index + 1}`}
-                                className="block h-auto max-h-[900px] w-full object-contain"
-                                />
+                            <div className="h-[900px] w-full overflow-y-auto bg-gray-100">
+                                <div className="flex min-h-full w-full justify-center">
+                                    <img
+                                        src={image}
+                                        alt={`${project.title} 이미지 ${index + 1}`}
+                                        className={`block h-auto w-full object-contain ${
+                                            project.id === 1 ? 'max-w-[400px]' : 'max-w-none'
+                                        }`}
+                                    />
+                                </div>
                             </div>
                         </SwiperSlide>
                     ))}
@@ -164,11 +162,7 @@ export default function ProjectDetail() {
                 <Heart
                   size={18}
                   strokeWidth={2}
-                  className={`transition-colors ${
-                    isWishlisted
-                      ? 'fill-red-500 text-red-500'
-                      : 'text-gray-400'
-                  }`}
+                  className={`transition-colors ${ isWishlisted ? 'fill-red-500 text-red-500' : 'text-gray-400'}`}
                 />
 
                 <span

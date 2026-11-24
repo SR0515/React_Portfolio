@@ -1,0 +1,32 @@
+{
+  "_comment1": "=== 공통 컴포넌트 - 헤더 번역  ===",
+  "header": {
+    "searchPlaceholder": "Search projects and tech stacks.",
+    "search": "Search",
+    "language": "Select language",
+    "wishlist": "Wishlist",
+    "myPage": "My Page"
+  },
+
+  "_comment2": "=== 공통 컴포넌트 - 메인배너 번역  ===",
+  "mainBanner": {
+    "badge": "FRONTEND DEVELOPER PORTFOLIO",
+    "titleLine1": "I focus on user experience",
+    "titleHighlight": "Turning design into code",
+    "titleLine2": "with passion.",
+    "greeting": "Hello!",
+    "descriptionLine1": "With a background in web design, I understand UI/UX",
+    "descriptionLine2": "and build high-quality web services using various technologies.",
+    "button": "Explore Projects",
+    "keywords": "Frontend · Full Stack · UI/UX"
+  },
+
+  "_comment3": "=== 공통 컴포넌트 - 카테고리nav 번역  ===",
+  "categoryNav": {
+    "all": "All Projects",
+    "frontend": "Frontend",
+    "fullstack": "Full Stack",
+    "design": "Design",
+    "blog": "Developer Blog"
+  }
+}

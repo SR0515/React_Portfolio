@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-2">
           <div>
             <h2 className="text-2xl font-black text-[#346AFF]">
-              SURINSHOP
+              SURIN<span className="text-gray-800">SHOP</span>
             </h2>
 
             <p className="mt-4 max-w-md text-sm leading-7 text-gray-500">

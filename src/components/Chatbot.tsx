@@ -35,6 +35,12 @@ const suggestions = [
     description: '8개 프로젝트의 주요 업무와 기술 스택을 알아봐요.',
     message: '프로젝트들에서 어떤 업무를 담당했어?',
   },
+  {
+    icon: Sparkles,
+    title: 'AI 챗봇 구현 방식',
+    description: '이 포트폴리오 챗봇은 어떻게 만들었나요?',
+    message: '이 포트폴리오의 AI 챗봇은 어떤 기술을 사용했고, 어떻게 구현했어?',
+  },
 ];
 
 export default function Chatbot() {
@@ -369,14 +375,15 @@ export default function Chatbot() {
         aria-label={isOpen ? '챗봇 닫기' : 'AI 비서에게 물어보기'}
         aria-expanded={isOpen}
         className="
-          group relative flex items-center gap-2.5
+          group relative flex items-center justify-center gap-2.5
           rounded-full border border-white/20
-          bg-[#346AFF] px-5 py-3.5 text-white
+          bg-[#346AFF] p-3.5 text-white
           shadow-[0_8px_25px_rgba(52,106,255,0.35)]
           transition-all duration-300
           hover:-translate-y-1 hover:bg-[#2458E8]
           hover:shadow-[0_12px_30px_rgba(52,106,255,0.4)]
           active:scale-95
+          sm:px-5 sm:py-3.5
         "
       >
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15">
@@ -387,7 +394,8 @@ export default function Chatbot() {
           )}
         </div>
 
-        <div className="flex flex-col items-start">
+        {/* 모바일에서는 텍스트 숨김 */}
+        <div className="hidden flex-col items-start sm:flex">
           <span className="text-[13px] font-bold tracking-tight">
             {isOpen ? '챗봇 닫기' : 'AI에게 물어보기'}
           </span>

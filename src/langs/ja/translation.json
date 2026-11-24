@@ -1,0 +1,32 @@
+{
+  "_comment1": "=== 공통 컴포넌트 - 헤더 번역  ===",
+  "header": {
+    "searchPlaceholder": "プロジェクトや技術スタックを検索してください。",
+    "search": "検索",
+    "language": "言語選択",
+    "wishlist": "お気に入り",
+    "myPage": "マイページ"
+  },
+
+  "_comment2": "=== 공통 컴포넌트 - 메인배너 번역  ===",
+  "mainBanner": {
+    "badge": "FRONTEND DEVELOPER PORTFOLIO",
+    "titleLine1": "ユーザー体験を考え、",
+    "titleHighlight": "デザインをコードに",
+    "titleLine2": "変えます。",
+    "greeting": "こんにちは！",
+    "descriptionLine1": "Webデザインの経験を活かしてUI/UXを理解し、",
+    "descriptionLine2": "さまざまな技術を活用して高品質なWebサービスを開発するフロントエンドエンジニアです。",
+    "button": "プロジェクトを見る",
+    "keywords": "Frontend · Full Stack · UI/UX"
+  },
+
+  "_comment3": "=== 공통 컴포넌트 - 카테고리nav 번역  ===",
+  "categoryNav": {
+    "all": "すべてのプロジェクト",
+    "frontend": "Frontend",
+    "fullstack": "Full Stack",
+    "design": "Design",
+    "blog": "開発ブログ"
+  }
+}

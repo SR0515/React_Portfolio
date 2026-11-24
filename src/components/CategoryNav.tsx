@@ -1,11 +1,6 @@
 
-import {
-  LayoutGrid,
-  Monitor,
-  Server,
-  Palette,
-  BookOpen,
-} from 'lucide-react';
+import { LayoutGrid, Monitor, Server, Palette,} from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface CategoryNavProps {
   selected: string;
@@ -13,16 +8,18 @@ interface CategoryNavProps {
 }
 
 const categories = [
-  { id: 'all', label: '전체 프로젝트', icon: LayoutGrid },
-  { id: 'frontend', label: 'Frontend', icon: Monitor },
-  { id: 'fullstack', label: 'Full Stack', icon: Server },
-  { id: 'design', label: 'Design', icon: Palette },
+  { id: 'all', icon: LayoutGrid },
+  { id: 'frontend', icon: Monitor },
+  { id: 'fullstack', icon: Server },
+  { id: 'design', icon: Palette },
 ];
 
 export default function CategoryNav({
   selected,
   onSelect,
 }: CategoryNavProps) {
+  const { t } = useTranslation();
+
   return (
     <nav className="border-b border-gray-200 bg-white">
       <div className="mx-auto flex max-w-[1200px] items-center gap-2 overflow-x-auto px-5 py-3">
@@ -42,19 +39,19 @@ export default function CategoryNav({
               }`}
             >
               <Icon size={16} strokeWidth={2} />
-              {category.label}
+              {t(`categoryNav.${category.id}`)}
             </button>
           );
         })}
 
         {/* 개발 블로그 */}
-        <a
+        {/* <a
           href="#journal"
           className="flex shrink-0 items-center gap-2 rounded-full px-5 py-2 text-sm font-medium text-gray-600 transition hover:bg-blue-50 hover:text-[#346AFF]"
         >
           <BookOpen size={16} strokeWidth={2} />
-          개발 블로그
-        </a>
+          {t('categoryNav.blog')}
+        </a> */}
       </div>
     </nav>
   );

@@ -6,7 +6,6 @@ import MainBanner from '@/components/MainBanner';
 import ProjectSection from '@/components/ProjectSection';
 import ProjectFilter from '@/components/ProjectFilter';
 import TechSection from '@/components/TechSection';
-import JournalSection from '@/components/JournalSection';
 import Footer from '@/components/Footer';
 import { projects } from '@/data/portfolio';
 import useWishlist from '@/hooks/useWishlist';
@@ -100,7 +99,7 @@ export default function Main() {
           />
 
           <TechSection />
-          <JournalSection />
+          {/* <JournalSection /> */}
         </div>
       </main>
 

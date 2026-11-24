@@ -141,7 +141,7 @@ export default function ProjectCard({
         </p>
 
         {/* 기술 스택 */}
-        <div className="mb-4 flex flex-wrap items-start gap-1.5 h-[54px]">
+        <div className="mb-4 flex flex-wrap items-start gap-1.5 min-h-[54px]">
           {project.stack.map((tech) => (
             <span
               key={tech}
