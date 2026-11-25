@@ -1,4 +1,59 @@
 {
+  "common": {
+    "wishlistAdded": "Added to your wishlist.",
+    "wishlistRemoved": "Removed from your wishlist."
+  },
+
+  "chatbot": {
+    "header": {
+        "title": "Surin AI Assistant",
+        "status": "Online · Ask me anything"
+    },
+    "close": "Close chat",
+    "welcome": "Hello!",
+    "welcomeDescription": "Welcome to Kim Su-rin's developer portfolio.",
+    "welcomeGuide": "Feel free to ask me anything!",
+    "loading": "Preparing your answer...",
+    "suggestionTitle": "Here are some suggested questions",
+    "suggestionMore": "Ask another question",
+    "inputPlaceholder": "Type your question...",
+    "send": "Send message",
+    "button": {
+        "open": "Ask AI",
+        "close": "Close chatbot",
+        "description": "Portfolio AI Assistant"
+    },
+    "errors": {
+        "title": "An error occurred.",
+        "emptyResponse": "The server returned an empty response.",
+        "invalidResponse": "The server response is not valid JSON.",
+        "requestFailed": "Failed to get an AI response.",
+        "connectionFailed": "A communication error occurred."
+    },
+    "suggestions": {
+        "projects": {
+        "title": "Key Projects",
+        "description": "What projects have you worked on?",
+        "message": "What projects are included in your portfolio?"
+        },
+        "skills": {
+        "title": "Tech Stack",
+        "description": "What technologies can you use?",
+        "message": "What are Kim Su-rin's key technical skills?"
+        },
+        "responsibilities": {
+        "title": "Project Responsibilities",
+        "description": "Explore the responsibilities and tech stacks of all 8 projects.",
+        "message": "What responsibilities did you have across your projects?"
+        },
+        "implementation": {
+        "title": "AI Chatbot Implementation",
+        "description": "How was this portfolio chatbot built?",
+        "message": "What technologies were used to build this portfolio's AI chatbot, and how was it implemented?"
+        }
+    }
+  },
+
   "_comment1": "=== 공통 컴포넌트 - 헤더 번역  ===",
   "header": {
     "searchPlaceholder": "Search projects and tech stacks.",
@@ -15,6 +70,7 @@
     "titleHighlight": "Turning design into code",
     "titleLine2": "with passion.",
     "greeting": "Hello!",
+    "nameSuffix": ".",
     "descriptionLine1": "With a background in web design, I understand UI/UX",
     "descriptionLine2": "and build high-quality web services using various technologies.",
     "button": "Explore Projects",
@@ -28,5 +84,232 @@
     "fullstack": "Full Stack",
     "design": "Design",
     "blog": "Developer Blog"
+  },
+
+  "_comment4": "=== 공통 컴포넌트 - 푸터 번역  ===",
+  "footer": {
+    "description": "I'm Surin Kim, a frontend developer connecting design and development to create better user experiences.",
+    "descriptionSub": "This space is an archive of my projects and development experiences.",
+    "contact": "CONTACT",
+    "copyright": "© 2026 KIM SURIN. All rights reserved."
+  },
+
+  "_comment5": "=== 공통 컴포넌트 - 검색필터 번역  ===",
+  "projectFilter": {
+    "result": "Search Results",
+    "countUnit": "projects",
+    "allTech": "All Technologies"
+  },
+
+  "_comment6": "=== 컴포넌트 - ProjectCard 번역  ===",
+   "projectCard": {
+    "imageAlt": "Image {{index}} of {{title}}",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "imagePreparing": "Project images coming soon",
+    "removeWishlist": "Remove from wishlist",
+    "addWishlist": "Add to wishlist",
+    "detailButton": "View Project Details"
+  },
+
+  "_comment7": "=== 컴포넌트 - ProjectSection 번역  ===",
+  "projectSection": {
+    "titleSearch": "Search Results",
+    "titleRecommend": "Featured Projects",
+    "description": "Explore my portfolio projects.",
+    "total": "Total",
+    "countUnit": "projects",
+    "emptyTitle": "No results found.",
+    "emptyDescription": "Try changing your search keyword or filter."
+  },
+
+  "_comment8": "=== 프로젝트 data 번역  ===",
+  "projectData": {
+    "1": {
+        "title": "Integrated Accommodation Reservation System",
+        "description": "A mobile-focused platform for searching and booking various types of accommodations in one place.",
+        "overview": "I was responsible for frontend development of a platform that integrates accommodation search and booking. Based on Figma designs, I implemented a mobile-focused responsive UI, integrated REST APIs, managed global state, and established a multilingual environment to deliver a user-centered booking experience.",
+        "role": "Frontend Developer",
+        "badge": "Frontend",
+        "responsibilities": [
+            "Designed and developed an SPA architecture using React 19, TypeScript, and Vite",
+            "Designed a shared API request structure and reusable UI components",
+            "Implemented a mobile-focused responsive UI based on Figma designs",
+            "Developed touch interactions, slide UI, and bottom sheets using Tailwind CSS 4",
+            "Managed global state for authentication, accommodation selection, dates, and guest counts using Zustand",
+            "Integrated REST APIs for search filters, accommodation details, wishlists, coupons, points, and reservations",
+            "Implemented map navigation and marker interactions using the Kakao Map API",
+            "Established a four-language environment using i18next: Korean, English, Japanese, and Chinese"
+        ]
+    },
+    "2": {
+        "title": "Settlement System Enhancement and Full-Stack Development",
+        "description": "An integrated settlement system for managing settlement data across administrators, partners, and stores.",
+        "overview": "Participated in enhancing an existing Classic ASP-based settlement system using SvelteKit and Node.js. Developed both frontend and backend features for administrator, partner, and store systems, while improving the application structure and implementing data management features with TypeScript.",
+        "role": "Full-Stack Developer",
+        "badge": "FULL STACK",
+        "responsibilities": [
+            "Migrated a legacy Classic ASP system to a SvelteKit and TypeScript environment",
+            "Defined component structures and API data types for settlement and access control",
+            "Developed CRUD APIs using Express and Sequelize",
+            "Integrated MySQL and implemented data processing logic",
+            "Developed access control and data retrieval features for administrators, partners, and stores",
+            "Implemented search and pagination features",
+            "Created API documentation using Swagger (OpenAPI)"
+        ]
+    },
+    "3": {
+        "title": "Multi-Domain Platform and Admin System",
+        "description": "A web platform operating multiple domains from a single codebase, with QR traffic analytics.",
+        "overview": "Built a website and administration system capable of operating multiple domains from a single codebase. Designed domain-specific routing for traffic analysis and developed QR traffic log collection, statistical dashboards, and automated resource generation.",
+        "role": "Full-Stack Developer",
+        "badge": "PLATFORM",
+        "responsibilities": [
+            "Designed domain-specific routing based on SvelteKit SSR",
+            "Built a multi-domain website using a single application",
+            "Integrated a PostgreSQL database",
+            "Implemented QR traffic analytics log collection",
+            "Developed an administrator analytics dashboard",
+            "Generated QR codes and SVG resources using Python"
+        ]
+    },
+    "4": {
+        "title": "Automated E-commerce Product Data Collection System",
+        "description": "An automated system for collecting and storing e-commerce product data using Selenium and Requests.",
+        "overview": "Built a data collection system that automatically gathers product information from multiple online stores and stores it in a database. Combined Selenium-based login and session management with Requests-based data collection, then developed a process to clean and store the collected data in PostgreSQL.",
+        "role": "Backend Developer",
+        "badge": "AUTOMATION",
+        "responsibilities": [
+            "Implemented e-commerce login and session management using Selenium",
+            "Developed product data collection using Requests",
+            "Built a hybrid crawler combining Selenium and Requests",
+            "Parsed product data using regular expressions",
+            "Implemented JSON data cleaning and transformation",
+            "Developed automated data ingestion into PostgreSQL"
+        ]
+    },
+    "5": {
+        "title": "Payment Solution Administration System",
+        "description": "A web-based payment and settlement management system for administrators, partners, and stores.",
+        "overview": "Developed user interfaces for the administrator, partner, and store systems of a payment solution. Implemented management screens for data retrieval and input, along with reusable UI components and responsive layouts.",
+        "role": "UI Publisher",
+        "badge": "ADMIN",
+        "responsibilities": [
+            "Developed the administrator system UI",
+            "Implemented search and data entry screens",
+            "Developed reusable UI components",
+            "Implemented responsive layouts"
+        ]
+    },
+    "6": {
+        "title": "E-commerce Website Development and Management System",
+        "description": "Development of e-commerce ordering, membership, payment, and administration features.",
+        "overview": "Developed screens related to orders, memberships, and payments, and improved administrator features as part of an e-commerce website project. Maintained the existing store management system and customized GNUBoard-based features to meet project requirements.",
+        "role": "UI Publisher",
+        "badge": "E-COMMERCE",
+        "responsibilities": [
+            "Developed and maintained e-commerce website interfaces",
+            "Developed UI for orders, memberships, and payments",
+            "Improved administrator screens for order and sales management",
+            "Customized features based on GNUBoard"
+        ]
+    },
+    "7": {
+        "title": "Flutter-based Payment Application UI Development",
+        "description": "Development of a mobile payment application UI using Flutter widgets.",
+        "overview": "Participated in developing a mobile application for a Flutter-based payment solution. Implemented mobile UI using Flutter widgets and tested screen behavior and layouts in the Android Emulator environment.",
+        "role": "Mobile UI Developer",
+        "badge": "MOBILE",
+        "responsibilities": [
+            "Developed mobile UI using Flutter widgets",
+            "Implemented mobile layouts and responsive UI",
+            "Tested screens in the Android Emulator environment"
+        ]
+    },
+    "8": {
+        "title": "Web Design Using Photoshop",
+        "description": "Web design and visual content creation using Photoshop.",
+        "overview": "Created designs for web services using Photoshop, focusing on visual quality and user experience.",
+        "role": "Web Designer",
+        "badge": "DESIGN",
+        "responsibilities": [
+            "Created web designs using Photoshop",
+            "Designed web page layouts and visual elements",
+            "Designed visual elements, color schemes, and typography"
+        ]
+    }
+  },
+
+  "_comment9": "=== 페이지 - ProjectDetail 번역  ===",
+  "projectDetail": {
+    "notFound": "Project not found.",
+    "goHome": "Home",
+    "imageAlt": "{{title}} project image {{index}}",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "noImage": "Project images coming soon",
+    "techStack": "Tech Stack",
+    "responsibilities": "Key Responsibilities",
+    "otherProjects": "Explore Other Projects"
+  },
+
+  "_comment10": "=== 페이지 - Wishlist 번역  ===",
+  "wishlist": {
+    "title": "My Wishlist",
+    "description": "Browse all the projects you're interested in.",
+    "count": "You've added {{count}} projects to your wishlist.",
+    "emptyTitle": "You haven't added any projects yet.",
+    "emptyDescription": "Click the heart button on a project to add it to your wishlist.",
+    "exploreProjects": "Explore Projects"
+  },
+
+  "_comment11": "=== 페이지 - Mypage 번역  ===",
+  "myPage": {
+     "title": "My Page",
+    "subtitle": "Explore the portfolio and activities of web developer Kim Su-rin.",
+    "profileImageAlt": "Kim Su-rin profile image",
+    "profileDescription": "I am a frontend-focused web developer who cares about user experience and delivering high-quality services.",
+    "statistics": {
+        "projects": "Total Projects",
+        "skills": "Tech Stack",
+        "categories": "Development Areas",
+        "unit": ""
+    },
+    "menuDescription": "Portfolio Menu",
+    "menu": {
+        "overview": "My Page",
+        "projects": "My Projects",
+        "wishlist": "My Wishlist",
+        "skills": "Tech Stack",
+        "github": "GitHub"
+    },
+    "projects": {
+        "title": "My Projects",
+        "description": "Explore the projects I have worked on.",
+        "viewAll": "View All"
+    },
+    "categories": {
+        "title": "Development Areas",
+        "description": "I build web services based on diverse development experience.",
+        "frontend": {
+        "title": "Frontend",
+        "description": "Developing user-focused interfaces and web services"
+        },
+        "fullstack": {
+        "title": "Full Stack",
+        "description": "Building services from frontend to backend"
+        },
+        "design": {
+        "title": "Design",
+        "description": "UI/UX and web design experience"
+        }
+    },
+    "skills": {
+        "title": "Tech Stack",
+        "description": "Key technologies used in my projects."
+    },
+    "contact": {
+        "description": "I am open to new opportunities and collaborations."
+    }
   }
 }

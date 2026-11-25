@@ -1,15 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
-import {
-  X,
-  Send,
-  MessageCircle,
-  Bot,
-  Sparkles,
-  Code2,
-  FolderKanban,
-  BriefcaseBusiness,
-} from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { X, Send, MessageCircle, Bot, Sparkles, Code2, FolderKanban, BriefcaseBusiness,} from 'lucide-react';
 
 interface ChatMessage {
   role: 'user' | 'ai';
@@ -19,31 +11,43 @@ interface ChatMessage {
 const suggestions = [
   {
     icon: BriefcaseBusiness,
-    title: '주요 프로젝트',
-    description: '어떤 프로젝트를 진행했나요?',
-    message: '포트폴리오에 어떤 프로젝트들이 있어?',
+    title: 'chatbot.suggestions.projects.title',
+    description: 'chatbot.suggestions.projects.description',
+    message: 'chatbot.suggestions.projects.message',
   },
   {
     icon: Code2,
-    title: '기술 스택',
-    description: '사용할 수 있는 기술이 궁금해요.',
-    message: '김수린 개발자의 핵심 기술 스택은 뭐야?',
+    title: 'chatbot.suggestions.skills.title',
+    description: 'chatbot.suggestions.skills.description',
+    message: 'chatbot.suggestions.skills.message',
   },
   {
     icon: FolderKanban,
-    title: '프로젝트별 담당 업무',
-    description: '8개 프로젝트의 주요 업무와 기술 스택을 알아봐요.',
-    message: '프로젝트들에서 어떤 업무를 담당했어?',
+    title: 'chatbot.suggestions.responsibilities.title',
+    description: 'chatbot.suggestions.responsibilities.description',
+    message: 'chatbot.suggestions.responsibilities.message',
   },
   {
     icon: Sparkles,
-    title: 'AI 챗봇 구현 방식',
-    description: '이 포트폴리오 챗봇은 어떻게 만들었나요?',
-    message: '이 포트폴리오의 AI 챗봇은 어떤 기술을 사용했고, 어떻게 구현했어?',
+    title: 'chatbot.suggestions.implementation.title',
+    description: 'chatbot.suggestions.implementation.description',
+    message: 'chatbot.suggestions.implementation.message',
   },
 ];
 
 export default function Chatbot() {
+  const { t, i18n } = useTranslation();
+  // 현재 선택된 언어 가져오기
+  const currentLanguage = (
+    i18n.resolvedLanguage || i18n.language || 'ko'
+  ).split('-')[0];
+
+  const supportedLanguages = ['ko', 'en', 'ja', 'zh'];
+
+  const chatLanguage = supportedLanguages.includes(currentLanguage)
+    ? currentLanguage
+    : 'ko';
+
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -97,13 +101,14 @@ export default function Chatbot() {
         body: JSON.stringify({
           message: userText,
           history: currentHistory,
+          language: chatLanguage,
         }),
       });
 
       const responseText = await response.text();
 
       if (!responseText) {
-        throw new Error('서버에서 빈 응답을 반환했습니다.');
+        throw new Error(t('chatbot.errors.emptyResponse'));
       }
 
       let data;
@@ -111,11 +116,13 @@ export default function Chatbot() {
       try {
         data = JSON.parse(responseText);
       } catch {
-        throw new Error('서버 응답이 JSON 형식이 아닙니다.');
+        throw new Error(t('chatbot.errors.invalidResponse'));
       }
 
       if (!response.ok) {
-        throw new Error(data.error || 'AI 응답을 가져오지 못했습니다.');
+        throw new Error(
+          data.error || t('chatbot.errors.requestFailed')
+        );
       }
 
       setMessages((prev) => [
@@ -131,13 +138,13 @@ export default function Chatbot() {
       const errorMessage =
         error instanceof Error
           ? error.message
-          : '서버와 통신하는 중 오류가 발생했습니다.';
+          : t('chatbot.errors.connectionFailed');
 
       setMessages((prev) => [
         ...prev,
         {
           role: 'ai',
-          text: `오류가 발생했어요.\n${errorMessage}`,
+          text: `${t('chatbot.errors.title')}\n${errorMessage}`,
         },
       ]);
     } finally {
@@ -179,12 +186,12 @@ export default function Chatbot() {
 
               <div>
                 <h3 className="text-[15px] font-bold tracking-tight text-[#191F28]">
-                  수린 AI 어시스턴트
+                  {t('chatbot.header.title')}
                 </h3>
 
                 <p className="mt-0.5 flex items-center gap-1 text-[11px] font-medium text-gray-400">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                  온라인 · 무엇이든 물어보세요
+                  {t('chatbot.header.status')}
                 </p>
               </div>
             </div>
@@ -209,17 +216,17 @@ export default function Chatbot() {
                 <div className="flex flex-1 flex-col justify-center">
                     <div className="mb-5 text-center">
                         <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-[20px] bg-[#EAF0FF] text-[#346AFF]">
-                            <Sparkles size={27} />
+                          <Sparkles size={27} />
                         </div>
 
                         <h4 className="text-[19px] font-extrabold tracking-tight text-[#191F28]">
-                            안녕하세요! 👋
+                          {t('chatbot.welcome')} 👋
                         </h4>
 
                         <p className="mt-2 text-[13px] leading-relaxed text-gray-500">
-                            김수린 개발자의 포트폴리오에 오신 것을 환영해요.
-                            <br />
-                            궁금한 내용을 편하게 질문해 주세요!
+                          {t('chatbot.welcomeDescription')}
+                          <br />
+                          {t('chatbot.welcomeGuide')}
                         </p>
                     </div>
                 </div>
@@ -253,15 +260,29 @@ export default function Chatbot() {
 
             {/* 로딩 표시 */}
             {isLoading && (
-                <div className="flex items-end gap-2">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#346AFF] text-white">
-                        <Bot size={17} />
-                    </div>
-
-                    <div className="rounded-[18px] bg-white px-4 py-3 text-[12px] text-gray-400">
-                        답변을 작성하고 있어요...
-                    </div>
+              <div className="flex items-end gap-2">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#346AFF] text-white">
+                  <Bot size={17} />
                 </div>
+
+                <div className="rounded-[18px] bg-white px-4 py-3 text-[12px] text-gray-400">
+                  <span className="loading-text">
+                    {t('chatbot.loading')
+                      .split('')
+                      .map((char, index) => (
+                        <span
+                          key={index}
+                          className="loading-letter"
+                          style={{
+                            animationDelay: `${index * 0.08}s`,
+                          }}
+                        >
+                          {char === ' ' ? '\u00A0' : char}
+                        </span>
+                      ))}
+                  </span>
+                </div>
+              </div>
             )}
 
             {/* 추천 질문: messages 조건문 밖에 배치 */}
@@ -272,44 +293,44 @@ export default function Chatbot() {
 
                     <span className="text-[12px] font-bold text-gray-500">
                     {messages.length === 0
-                        ? '이런 질문은 어떠세요?'
-                        : '다른 질문도 해보세요'}
+                        ? t('chatbot.suggestionTitle')
+                        : t('chatbot.suggestionMore')}
                     </span>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    {suggestions.map((item) => {
+                  {suggestions.map((item) => {
                     const Icon = item.icon;
 
                     return (
-                        <button
+                      <button
                         key={item.title}
                         type="button"
-                        onClick={() => handleSuggestion(item.message)}
+                        onClick={() => handleSuggestion(t(item.message))}
                         className="group flex w-full items-center gap-3 rounded-2xl border border-gray-100 bg-white p-3 text-left transition-all hover:border-[#B8CBFF] hover:bg-[#F8FAFF]"
-                        >
+                      >
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#EFF4FF] text-[#346AFF] transition-colors group-hover:bg-[#346AFF] group-hover:text-white">
                             <Icon size={18} />
                         </div>
 
                         <div className="min-w-0 flex-1">
                             <p className="text-[13px] font-bold text-[#191F28]">
-                            {item.title}
+                              {t(item.title)}
                             </p>
 
                             <p className="mt-0.5 text-[11px] text-gray-400">
-                            {item.description}
+                              {t(item.description)}
                             </p>
                         </div>
 
                         <span className="text-gray-300 transition-all group-hover:translate-x-1 group-hover:text-[#346AFF]">
-                            →
+                          →
                         </span>
-                        </button>
+                      </button>
                     );
-                    })}
+                  })}
                 </div>
-                </div>
+              </div>
             )}
           </div>
 
@@ -337,7 +358,7 @@ export default function Chatbot() {
                 type="text"
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
-                placeholder="궁금한 내용을 입력해 주세요."
+                placeholder={t('chatbot.inputPlaceholder')}
                 disabled={isLoading}
                 className="
                   min-w-0 flex-1 bg-transparent
@@ -350,7 +371,7 @@ export default function Chatbot() {
               <button
                 type="submit"
                 disabled={isLoading || !inputMessage.trim()}
-                aria-label="메시지 전송"
+                aria-label={t('chatbot.send')}
                 className="
                   flex h-10 w-10 shrink-0 items-center
                   justify-center rounded-xl bg-[#346AFF]
@@ -372,7 +393,11 @@ export default function Chatbot() {
       <button
         type="button"
         onClick={toggleChat}
-        aria-label={isOpen ? '챗봇 닫기' : 'AI 비서에게 물어보기'}
+        aria-label={
+          isOpen
+            ? t('chatbot.button.close')
+            : t('chatbot.button.open')
+        }
         aria-expanded={isOpen}
         className="
           group relative flex items-center justify-center gap-2.5
@@ -397,12 +422,14 @@ export default function Chatbot() {
         {/* 모바일에서는 텍스트 숨김 */}
         <div className="hidden flex-col items-start sm:flex">
           <span className="text-[13px] font-bold tracking-tight">
-            {isOpen ? '챗봇 닫기' : 'AI에게 물어보기'}
+            {isOpen
+              ? t('chatbot.button.close')
+              : t('chatbot.button.open')}
           </span>
 
           {!isOpen && (
             <span className="text-[10px] font-medium text-blue-100">
-              포트폴리오 AI 어시스턴트
+              {t('chatbot.button.description')}
             </span>
           )}
         </div>

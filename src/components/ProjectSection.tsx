@@ -1,6 +1,7 @@
 
 import ProjectCard from '@/components/ProjectCard';
 import type { Project } from '@/data/portfolio';
+import { useTranslation } from 'react-i18next';
 
 interface ProjectSectionProps {
   projects: Project[];
@@ -15,6 +16,8 @@ export default function ProjectSection({
   onToggleWishlist,
   search,
 }: ProjectSectionProps) {
+  const { t } = useTranslation();
+
   return (
     <section id="projects" className="mt-5 scroll-mt-28">
       <div className="mb-6 flex items-end justify-between">
@@ -22,16 +25,22 @@ export default function ProjectSection({
           <p className="mb-1 text-xs font-bold tracking-widest text-[#346AFF]">
             MY PORTFOLIO
           </p>
+
           <h2 className="text-2xl font-bold text-gray-900">
-            {search ? '검색 결과' : '추천 프로젝트'}
+            {search
+              ? t('projectSection.titleSearch')
+              : t('projectSection.titleRecommend')}
           </h2>
+
           <p className="mt-1 text-sm text-gray-500">
-            포트폴리오 프로젝트를 소개합니다.
+            {t('projectSection.description')}
           </p>
         </div>
 
         <span className="text-sm text-gray-400">
-          총 {projects.length}개
+          {t('projectSection.total')}{' '}
+          {projects.length}
+          {t('projectSection.countUnit')}
         </span>
       </div>
 
@@ -49,11 +58,13 @@ export default function ProjectSection({
       ) : (
         <div className="rounded-xl border border-gray-200 bg-white py-20 text-center">
           <p className="mb-2 text-3xl">🔍</p>
+
           <p className="font-semibold text-gray-700">
-            검색 결과가 없습니다.
+            {t('projectSection.emptyTitle')}
           </p>
+
           <p className="mt-1 text-sm text-gray-400">
-            검색어나 필터 조건을 변경해 보세요.
+            {t('projectSection.emptyDescription')}
           </p>
         </div>
       )}

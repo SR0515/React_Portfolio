@@ -1,4 +1,60 @@
 {
+  "common": {
+    "wishlistAdded": "お気に入りのプロジェクトに追加しました。",
+    "wishlistRemoved": "お気に入りのプロジェクトから削除しました。"
+  },
+
+  
+  "chatbot": {
+    "header": {
+        "title": "スリン AI アシスタント",
+        "status": "オンライン · 何でも聞いてください"
+    },
+    "close": "チャットを閉じる",
+    "welcome": "こんにちは！",
+    "welcomeDescription": "キム・スリンの開発者ポートフォリオへようこそ。",
+    "welcomeGuide": "気になることを気軽に質問してください！",
+    "loading": "回答を作成しています...",
+    "suggestionTitle": "こんな質問はいかがですか？",
+    "suggestionMore": "他の質問もしてみてください",
+    "inputPlaceholder": "質問を入力してください。",
+    "send": "メッセージを送信",
+    "button": {
+        "open": "AIに質問する",
+        "close": "チャットボットを閉じる",
+        "description": "ポートフォリオ AI アシスタント"
+    },
+    "errors": {
+        "title": "エラーが発生しました。",
+        "emptyResponse": "サーバーから空の応答が返されました。",
+        "invalidResponse": "サーバーの応答がJSON形式ではありません。",
+        "requestFailed": "AIの回答を取得できませんでした。",
+        "connectionFailed": "サーバーとの通信中にエラーが発生しました。"
+    },
+    "suggestions": {
+        "projects": {
+        "title": "主なプロジェクト",
+        "description": "どのようなプロジェクトを担当しましたか？",
+        "message": "ポートフォリオにはどのようなプロジェクトがありますか？"
+        },
+        "skills": {
+        "title": "使用技術",
+        "description": "使用できる技術について知りたいです。",
+        "message": "キム・スリンの主な技術スキルは何ですか？"
+        },
+        "responsibilities": {
+        "title": "プロジェクト別の担当業務",
+        "description": "8つのプロジェクトの担当業務と使用技術を紹介します。",
+        "message": "各プロジェクトでどのような業務を担当しましたか？"
+        },
+        "implementation": {
+        "title": "AIチャットボットの実装方法",
+        "description": "このポートフォリオのチャットボットはどのように作られましたか？",
+        "message": "このポートフォリオのAIチャットボットにはどのような技術が使われ、どのように実装されましたか？"
+        }
+    }
+  },
+
   "_comment1": "=== 공통 컴포넌트 - 헤더 번역  ===",
   "header": {
     "searchPlaceholder": "プロジェクトや技術スタックを検索してください。",
@@ -15,6 +71,7 @@
     "titleHighlight": "デザインをコードに",
     "titleLine2": "変えます。",
     "greeting": "こんにちは！",
+    "nameSuffix": "です。",
     "descriptionLine1": "Webデザインの経験を活かしてUI/UXを理解し、",
     "descriptionLine2": "さまざまな技術を活用して高品質なWebサービスを開発するフロントエンドエンジニアです。",
     "button": "プロジェクトを見る",
@@ -28,5 +85,232 @@
     "fullstack": "Full Stack",
     "design": "Design",
     "blog": "開発ブログ"
+  },
+
+  "_comment4": "=== 공통 컴포넌트 - 푸터 번역  ===",
+  "footer": {
+    "description": "デザインと開発をつなぎ、より良いユーザー体験を生み出すフロントエンドエンジニア、キム・スリンです。",
+    "descriptionSub": "このスペースは、私のプロジェクトや開発経験を記録するアーカイブです。",
+    "contact": "お問い合わせ",
+    "copyright": "© 2026 KIM SURIN. All rights reserved."
+  },
+
+  "_comment5": "=== 공통 컴포넌트 - 검색필터 번역  ===",
+  "projectFilter": {
+    "result": "検索結果",
+    "countUnit": "件",
+    "allTech": "すべての技術スタック"
+  },
+
+  "_comment6": "=== 컴포넌트 - ProjectCard 번역  ===",
+   "projectCard": {
+    "imageAlt": "{{title}}の画像 {{index}}",
+    "previousImage": "前の画像",
+    "nextImage": "次の画像",
+    "imagePreparing": "プロジェクト画像を準備中です",
+    "removeWishlist": "お気に入りを解除",
+    "addWishlist": "お気に入りに追加",
+    "detailButton": "プロジェクト詳細を見る"
+  },
+
+  "_comment7": "=== 컴포넌트 - ProjectSection 번역  ===",
+  "projectSection": {
+    "titleSearch": "検索結果",
+    "titleRecommend": "おすすめプロジェクト",
+    "description": "ポートフォリオのプロジェクトをご紹介します。",
+    "total": "合計",
+    "countUnit": "件",
+    "emptyTitle": "検索結果がありません。",
+    "emptyDescription": "検索キーワードやフィルター条件を変更してください。"
+  },
+
+  "_comment8": "=== 프로젝트 data 번역  ===",
+  "projectData": {
+    "1": {
+      "title": "宿泊施設統合予約システム",
+      "description": "さまざまな宿泊施設をまとめて検索・予約できる、モバイル中心の予約プラットフォーム",
+      "overview": "さまざまな宿泊施設を検索・予約できるプラットフォームのフロントエンド開発を担当しました。Figmaのデザインをもとにモバイル中心のレスポンシブUIを実装し、REST API連携、グローバル状態管理、多言語環境を構築して、ユーザー中心の予約体験を提供しました。",
+      "role": "フロントエンド開発",
+      "badge": "Frontend",
+      "responsibilities": [
+        "React 19、TypeScript、Viteを使用したSPAアーキテクチャの設計・開発",
+        "共通API呼び出し構造と再利用可能なUIコンポーネントの設計",
+        "Figmaのデザインに基づくモバイル中心のレスポンシブUI実装",
+        "Tailwind CSS 4を使用したタッチ操作、スライドUI、ボトムシートの開発",
+        "Zustandによる認証、宿泊施設選択、日付、人数のグローバル状態管理",
+        "検索フィルター、宿泊施設詳細、お気に入り、クーポン、ポイント、予約履歴のREST API連携",
+        "Kakao Map APIを使用した地図検索とマーカー操作の実装",
+        "i18nextによる韓国語・英語・日本語・中国語の4言語対応"
+      ]
+    },
+    "2": {
+      "title": "精算システムの高度化とフルスタック開発",
+      "description": "管理者、パートナー、加盟店ごとの精算データを管理する統合精算システム",
+      "overview": "既存のClassic ASPベースの精算システムをSvelteKitとNode.jsベースに高度化するプロジェクトに参加しました。管理者、パートナー、加盟店向けシステムのフロントエンドとバックエンドを開発し、TypeScriptによる構造改善とデータ管理機能を実装しました。",
+      "role": "フルスタック開発",
+      "badge": "FULL STACK",
+      "responsibilities": [
+        "Classic ASPベースのレガシーシステムをSvelteKit + TypeScript環境へ移行",
+        "精算・権限関連コンポーネントとAPIデータ型の定義",
+        "Express + SequelizeベースのCRUD API開発",
+        "MySQLデータベース連携とデータ処理ロジックの実装",
+        "管理者、パートナー、加盟店ごとの権限管理とデータ照会機能の開発",
+        "検索・ページネーション機能の実装",
+        "Swagger（OpenAPI）によるAPI仕様書の作成"
+      ]
+    },
+    "3": {
+      "title": "マルチドメイン統合プラットフォーム・管理システム",
+      "description": "単一のソースコードで複数ドメインを運用するWebプラットフォームとQR流入分析システム",
+      "overview": "単一のソースコードで複数ドメインを運用できるWebサイトと管理システムを構築しました。ドメインごとの流入分析に向けたルーティング構造を設計し、QR流入ログの収集、統計ダッシュボード、リソース生成の自動化機能を開発しました。",
+      "role": "フルスタック開発",
+      "badge": "PLATFORM",
+      "responsibilities": [
+        "SvelteKit SSRによるドメイン別ルーティング構造の設計",
+        "単一アプリケーションによるマルチドメインWebサイトの構築",
+        "PostgreSQLデータベース連携",
+        "QR流入分析ログの収集アルゴリズム実装",
+        "管理者向け統計ダッシュボードの開発",
+        "PythonによるQRコードおよびSVGリソースの生成"
+      ]
+    },
+    "4": {
+      "title": "ECサイト商品データ自動収集システム",
+      "description": "SeleniumとRequestsを活用したECサイトの商品情報自動収集・データ登録システム",
+      "overview": "複数のECサイトから商品情報を自動収集し、データベースに登録するシステムを構築しました。Seleniumによるログイン・セッション管理とRequestsによるデータ収集を組み合わせ、収集データを整形してPostgreSQLに保存するプロセスを開発しました。",
+      "role": "バックエンド開発",
+      "badge": "AUTOMATION",
+      "responsibilities": [
+        "SeleniumによるECサイトのログインとセッション管理の実装",
+        "Requestsを活用した商品データ収集構造の開発",
+        "SeleniumとRequestsを組み合わせたハイブリッドクローラーの構築",
+        "正規表現による商品データの解析",
+        "JSONデータの整形・加工プロセスの実装",
+        "PostgreSQLへのデータ自動登録機能の開発"
+      ]
+    },
+    "5": {
+      "title": "決済ソリューション管理システム",
+      "description": "管理者、パートナー、加盟店向けの決済・精算管理Webシステム",
+      "overview": "決済ソリューションの管理者、パートナー、加盟店向けWebシステムの画面開発を担当しました。データの照会・入力画面を実装し、共通UIコンポーネントとレスポンシブレイアウトを開発しました。",
+      "role": "UIパブリッシング",
+      "badge": "ADMIN",
+      "responsibilities": [
+        "管理システムのUI開発",
+        "検索・データ入力画面の実装",
+        "共通UIコンポーネントの開発",
+        "レスポンシブレイアウトの実装"
+      ]
+    },
+    "6": {
+      "title": "ECサイト構築・運営システム",
+      "description": "ECサイトの注文、会員、決済機能および管理システムの開発",
+      "overview": "ECサイト構築プロジェクトで注文、会員、決済関連の画面を開発し、管理者機能を改善しました。既存のECサイト運営システムを保守し、GNUBoardベースの機能をプロジェクトの要件に合わせてカスタマイズしました。",
+      "role": "UIパブリッシング",
+      "badge": "E-COMMERCE",
+      "responsibilities": [
+        "ECサイトの画面開発と保守",
+        "注文、会員、決済関連UIの開発",
+        "管理者向け注文・売上管理画面の改善",
+        "GNUBoardベースの機能カスタマイズ"
+      ]
+    },
+    "7": {
+      "title": "Flutterベース決済アプリケーションUI開発",
+      "description": "Flutter Widgetを活用したモバイル決済アプリケーションのUI開発",
+      "overview": "Flutterベースの決済ソリューション向けモバイルアプリケーション開発に参加しました。Flutter Widgetを使用してモバイルUIを実装し、Android Emulator環境で画面の動作とレイアウトをテストしました。",
+      "role": "モバイルUI開発",
+      "badge": "MOBILE",
+      "responsibilities": [
+        "Flutter Widgetを使用したモバイルUI開発",
+        "モバイル画面のレイアウトとレスポンシブUI実装",
+        "Android Emulator環境での画面テスト"
+      ]
+    },
+    "8": {
+      "title": "Photoshopを活用したWebデザイン",
+      "description": "Photoshopを使用したWebデザインとビジュアルコンテンツ制作",
+      "overview": "Photoshopを使用してWebサービスに必要なデザインを制作しました。ビジュアルの完成度とユーザー体験を考慮したWebデザインを行いました。",
+      "role": "Webデザイナー",
+      "badge": "DESIGN",
+      "responsibilities": [
+        "Photoshopを使用したWebデザイン制作",
+        "Web画面のレイアウトとビジュアル要素のデザイン",
+        "デザイン要素、配色、タイポグラフィの構成"
+      ]
+    }
+  },
+
+  "_comment9": "=== 페이지 - ProjectDetail 번역  ===",
+  "projectDetail": {
+    "notFound": "プロジェクトが見つかりません。",
+    "goHome": "ホームへ",
+    "imageAlt": "{{title}} プロジェクト画像 {{index}}",
+    "previousImage": "前の画像",
+    "nextImage": "次の画像",
+    "noImage": "プロジェクト画像を準備中です",
+    "techStack": "使用技術",
+    "responsibilities": "主な実装機能",
+    "otherProjects": "他のプロジェクトを見る"
+  },
+
+  "_comment10": "=== 페이지 - Wishlist 번역  ===",
+  "wishlist": {
+    "title": "お気に入りプロジェクト",
+    "description": "気になるプロジェクトをまとめて確認できます。",
+    "count": "{{count}}件のプロジェクトをお気に入りに登録しています。",
+    "emptyTitle": "お気に入りのプロジェクトはまだありません。",
+    "emptyDescription": "気になるプロジェクトのハートボタンを押してみてください。",
+    "exploreProjects": "プロジェクトを見る"
+  },
+
+  "_comment11": "=== 페이지 - Mypage 번역  ===",
+  "myPage": {
+    "title": "マイページ",
+    "subtitle": "Web開発者キム・スリンのポートフォリオと活動情報をご覧ください。",
+    "profileImageAlt": "キム・スリンのプロフィール画像",
+    "profileDescription": "ユーザー体験とサービスの完成度を大切にする、フロントエンド中心のWeb開発者です。",
+    "statistics": {
+        "projects": "プロジェクト総数",
+        "skills": "使用技術",
+        "categories": "主な開発分野",
+        "unit": "件"
+    },
+    "menuDescription": "ポートフォリオメニュー",
+    "menu": {
+        "overview": "マイページ",
+        "projects": "自分のプロジェクト",
+        "wishlist": "お気に入りプロジェクト",
+        "skills": "使用技術",
+        "github": "GitHub"
+    },
+    "projects": {
+        "title": "自分のプロジェクト",
+        "description": "これまでに参加したプロジェクトをご覧ください。",
+        "viewAll": "すべて見る"
+    },
+    "categories": {
+        "title": "主な開発分野",
+        "description": "さまざまな経験を活かしてWebサービスを開発しています。",
+        "frontend": {
+        "title": "Frontend",
+        "description": "ユーザー中心のUIとWebサービスの開発"
+        },
+        "fullstack": {
+        "title": "Full Stack",
+        "description": "フロントエンドからバックエンドまでのサービス構築"
+        },
+        "design": {
+        "title": "Design",
+        "description": "UI/UXおよびWebデザインの経験"
+        }
+    },
+    "skills": {
+        "title": "使用技術",
+        "description": "プロジェクトで活用した主な技術です。"
+    },
+    "contact": {
+        "description": "新しい機会やコラボレーションを歓迎しています。"
+    }
   }
 }

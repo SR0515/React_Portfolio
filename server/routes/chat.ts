@@ -9,11 +9,16 @@ interface ChatTurn {
   text: string;
 }
 
+type ChatLanguage = 'ko' | 'en' | 'ja' | 'zh';
+
+const supportedLanguages: ChatLanguage[] = ['ko', 'en', 'ja', 'zh'];
+
 router.post('/chat', async (req, res) => {
   try {
-    const { message, history } = req.body as {
+    const { message, history, language } = req.body as {
       message?: string;
       history?: ChatTurn[];
+      language?: string;
     };
 
     if (typeof message !== 'string' || !message.trim()) {
@@ -30,6 +35,14 @@ router.post('/chat', async (req, res) => {
       return;
     }
 
+    // 지원하는 언어인지 확인
+    const safeLanguage: ChatLanguage = supportedLanguages.includes(
+      language as ChatLanguage,
+    )
+      ? (language as ChatLanguage)
+      : 'ko';
+
+    // 최근 대화 기록 10개만 전달
     const safeHistory = Array.isArray(history)
       ? history
           .filter(
@@ -44,9 +57,11 @@ router.post('/chat', async (req, res) => {
           }))
       : [];
 
+    // 선택한 언어와 함께 AI 답변 요청
     const reply = await createChatReply(
       message.trim(),
       safeHistory,
+      safeLanguage,
     );
 
     res.status(200).json({

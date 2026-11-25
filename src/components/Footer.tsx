@@ -1,5 +1,9 @@
 
+import { useTranslation } from 'react-i18next';
+
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer id="about" className="mt-20 border-t border-gray-200 bg-white">
       <div className="mx-auto max-w-[1200px] px-5 py-12">
@@ -10,16 +14,15 @@ export default function Footer() {
             </h2>
 
             <p className="mt-4 max-w-md text-sm leading-7 text-gray-500">
-              디자인과 개발을 연결하며 더 나은 사용자 경험을
-              만들어가는 프론트엔드 개발자 김수린입니다.
+              {t('footer.description')}
               <br />
-              이 공간은 저의 프로젝트와 개발 경험을 기록하는 아카이브입니다.
+              {t('footer.descriptionSub')}
             </p>
           </div>
 
           <div className="md:text-right">
             <h3 className="font-bold text-gray-900">
-              CONTACT
+              {t('footer.contact')}
             </h3>
 
             <a
@@ -36,7 +39,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-gray-100 pt-6 text-center text-xs text-gray-400">
-          © 2026 KIM SURIN. All rights reserved.
+          {t('footer.copyright')}
         </div>
       </div>
     </footer>

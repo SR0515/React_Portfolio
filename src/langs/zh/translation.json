@@ -1,4 +1,59 @@
 {
+  "common": {
+    "wishlistAdded": "已添加到关注项目。",
+    "wishlistRemoved": "已从关注项目中删除。"
+  },
+
+  "chatbot": {
+    "header": {
+        "title": "秀琳 AI 助手",
+        "status": "在线 · 欢迎随时提问"
+    },
+    "close": "关闭聊天窗口",
+    "welcome": "你好！",
+    "welcomeDescription": "欢迎来到金秀琳开发者的作品集。",
+    "welcomeGuide": "有任何问题都可以随时向我提问！",
+    "loading": "正在生成回答...",
+    "suggestionTitle": "你可以尝试这些问题",
+    "suggestionMore": "也可以尝试其他问题",
+    "inputPlaceholder": "请输入你想了解的内容。",
+    "send": "发送消息",
+    "button": {
+        "open": "向 AI 提问",
+        "close": "关闭聊天机器人",
+        "description": "作品集 AI 助手"
+    },
+    "errors": {
+        "title": "发生错误。",
+        "emptyResponse": "服务器返回了空响应。",
+        "invalidResponse": "服务器响应不是有效的 JSON 格式。",
+        "requestFailed": "无法获取 AI 回答。",
+        "connectionFailed": "与服务器通信时发生错误。"
+    },
+    "suggestions": {
+        "projects": {
+        "title": "主要项目",
+        "description": "参与过哪些项目？",
+        "message": "作品集中有哪些项目？"
+        },
+        "skills": {
+        "title": "技术栈",
+        "description": "想了解你掌握的技术。",
+        "message": "金秀琳开发者的核心技术能力有哪些？"
+        },
+        "responsibilities": {
+        "title": "各项目负责的工作",
+        "description": "了解8个项目的主要工作和技术栈。",
+        "message": "你在各个项目中具体负责了哪些工作？"
+        },
+        "implementation": {
+        "title": "AI 聊天机器人的实现方式",
+        "description": "这个作品集聊天机器人是如何制作的？",
+        "message": "这个作品集的 AI 聊天机器人使用了哪些技术，又是如何实现的？"
+        }
+    }
+  },
+
   "_comment1": "=== 공통 컴포넌트 - 헤더 번역  ===",
   "header": {
     "searchPlaceholder": "搜索项目和技术栈。",
@@ -15,6 +70,7 @@
     "titleHighlight": "将设计转化为代码",
     "titleLine2": "创造更好的体验。",
     "greeting": "你好！",
+    "nameSuffix": "。",
     "descriptionLine1": "凭借网页设计经验，我深入理解 UI/UX，",
     "descriptionLine2": "并运用多种技术打造高品质的 Web 服务。",
     "button": "查看项目",
@@ -28,5 +84,232 @@
     "fullstack": "Full Stack",
     "design": "Design",
     "blog": "开发博客"
+  },
+
+  "_comment4": "=== 공통 컴포넌트 - 푸터 번역  ===",
+  "footer": {
+    "description": "我是金秀琳，一名连接设计与开发、致力于创造更好用户体验的前端开发工程师。",
+    "descriptionSub": "这里是记录我的项目和开发经验的个人档案空间。",
+    "contact": "联系方式",
+    "copyright": "© 2026 KIM SURIN. All rights reserved."
+  },
+
+  "_comment5": "=== 공통 컴포넌트 - 검색필터 번역  ===",
+  "projectFilter": {
+    "result": "搜索结果",
+    "countUnit": "个项目",
+    "allTech": "全部技术栈"
+  },
+
+  "_comment6": "=== 컴포넌트 - ProjectCard 번역  ===",
+   "projectCard": {
+    "imageAlt": "{{title}}的图片 {{index}}",
+    "previousImage": "上一张图片",
+    "nextImage": "下一张图片",
+    "imagePreparing": "项目图片准备中",
+    "removeWishlist": "取消收藏",
+    "addWishlist": "添加到收藏",
+    "detailButton": "查看项目详情"
+  },
+
+  "_comment7": "=== 컴포넌트 - ProjectSection 번역  ===",
+  "projectSection": {
+    "titleSearch": "搜索结果",
+    "titleRecommend": "推荐项目",
+    "description": "欢迎查看我的作品集项目。",
+    "total": "共",
+    "countUnit": "个项目",
+    "emptyTitle": "没有找到搜索结果。",
+    "emptyDescription": "请尝试更改搜索关键词或筛选条件。"
+  },
+
+  "_comment8": "=== 프로젝트 data 번역  ===",
+  "projectData": {
+    "1": {
+      "title": "综合住宿预订系统",
+      "description": "一个以移动端为中心、支持多种住宿设施统一搜索和预订的平台",
+      "overview": "负责整合各类住宿搜索与预订平台的前端开发。基于 Figma 设计实现移动端优先的响应式 UI，并完成 REST API 对接、全局状态管理和多语言环境配置，提供以用户体验为中心的预订服务。",
+      "role": "前端开发",
+      "badge": "Frontend",
+      "responsibilities": [
+        "基于 React 19、TypeScript 和 Vite 设计并开发 SPA 架构",
+        "设计通用 API 请求结构和可复用 UI 组件",
+        "根据 Figma 设计实现移动端优先的响应式 UI",
+        "使用 Tailwind CSS 4 开发触控交互、轮播 UI 和底部弹层",
+        "使用 Zustand 管理用户认证、住宿选择、日期及入住人数等全局状态",
+        "对接搜索筛选、住宿详情、收藏、优惠券、积分和预订记录等 REST API",
+        "基于 Kakao Map API 实现地图浏览和标记交互",
+        "使用 i18next 构建韩语、英语、日语和中文四种语言环境"
+      ]
+    },
+    "2": {
+      "title": "结算系统升级与全栈开发",
+      "description": "用于管理管理员、合作伙伴及加盟店结算数据的综合结算系统",
+      "overview": "参与将原有基于 Classic ASP 的结算系统升级为 SvelteKit 和 Node.js 架构的项目。负责管理员、合作伙伴及加盟店系统的前后端开发，并使用 TypeScript 改进系统结构及实现数据管理功能。",
+      "role": "全栈开发",
+      "badge": "FULL STACK",
+      "responsibilities": [
+        "将基于 Classic ASP 的旧系统迁移至 SvelteKit + TypeScript 环境",
+        "定义结算及权限相关组件和 API 数据类型",
+        "基于 Express + Sequelize 开发 CRUD API",
+        "对接 MySQL 数据库并实现数据处理逻辑",
+        "开发管理员、合作伙伴及加盟店的权限管理和数据查询功能",
+        "实现搜索和分页功能",
+        "使用 Swagger（OpenAPI）编写 API 文档"
+      ]
+    },
+    "3": {
+      "title": "多域名综合平台与管理系统",
+      "description": "通过单一代码库运营多个域名的网站平台及 QR 流量分析系统",
+      "overview": "构建了一个基于单一代码库运营多个域名的网站和管理系统。设计了用于分析各域名流量的路由结构，并开发 QR 流量日志收集、统计仪表板及资源自动生成功能。",
+      "role": "全栈开发",
+      "badge": "PLATFORM",
+      "responsibilities": [
+        "设计基于 SvelteKit SSR 的域名路由结构",
+        "基于单一应用构建多域名网站",
+        "对接 PostgreSQL 数据库",
+        "实现 QR 流量分析日志收集算法",
+        "开发管理员统计仪表板",
+        "使用 Python 生成 QR 码和 SVG 资源"
+      ]
+    },
+    "4": {
+      "title": "电商商品数据自动采集系统",
+      "description": "使用 Selenium 和 Requests 自动采集电商商品信息并存储数据的系统",
+      "overview": "构建了一个能够自动采集多个电商平台商品信息并写入数据库的数据采集系统。结合 Selenium 登录及会话管理与 Requests 数据采集方式，开发数据清洗处理流程，并将采集结果保存至 PostgreSQL。",
+      "role": "后端开发",
+      "badge": "AUTOMATION",
+      "responsibilities": [
+        "使用 Selenium 实现电商网站登录及会话管理",
+        "使用 Requests 开发商品数据采集结构",
+        "构建结合 Selenium 和 Requests 的混合爬虫",
+        "基于正则表达式解析商品数据",
+        "实现 JSON 数据清洗与转换流程",
+        "开发自动写入 PostgreSQL 数据库的功能"
+      ]
+    },
+    "5": {
+      "title": "支付解决方案管理系统",
+      "description": "面向管理员、合作伙伴及加盟店的支付与结算管理 Web 系统",
+      "overview": "负责支付解决方案中管理员、合作伙伴及加盟店 Web 系统的页面开发。实现数据查询和录入管理页面，并开发通用 UI 组件及响应式布局。",
+      "role": "UI 页面开发",
+      "badge": "ADMIN",
+      "responsibilities": [
+        "开发管理系统 UI",
+        "实现搜索及数据录入页面",
+        "开发通用 UI 组件",
+        "实现响应式布局"
+      ]
+    },
+    "6": {
+      "title": "电商网站搭建与运营系统",
+      "description": "开发电商订单、会员、支付功能及后台管理系统",
+      "overview": "在电商网站建设项目中开发订单、会员及支付相关页面，并改进管理员功能。负责维护现有电商运营系统，并根据项目需求定制基于 GNUBoard 的功能。",
+      "role": "UI 页面开发",
+      "badge": "E-COMMERCE",
+      "responsibilities": [
+        "开发并维护电商网站页面",
+        "开发订单、会员及支付相关 UI",
+        "改进管理员订单及销售管理页面",
+        "定制基于 GNUBoard 的功能"
+      ]
+    },
+    "7": {
+      "title": "基于 Flutter 的支付应用 UI 开发",
+      "description": "使用 Flutter Widget 开发移动支付解决方案应用 UI",
+      "overview": "参与基于 Flutter 的支付解决方案移动应用开发。使用 Flutter Widget 实现移动端 UI，并在 Android Emulator 环境中测试页面交互和布局。",
+      "role": "移动端 UI 开发",
+      "badge": "MOBILE",
+      "responsibilities": [
+        "基于 Flutter Widget 开发移动端 UI",
+        "实现移动端页面布局及响应式 UI",
+        "在 Android Emulator 环境中测试页面"
+      ]
+    },
+    "8": {
+      "title": "基于 Photoshop 的网页设计",
+      "description": "使用 Photoshop 进行网页设计和视觉内容制作",
+      "overview": "使用 Photoshop 完成 Web 服务所需的设计工作，并在设计过程中注重视觉完成度和用户体验。",
+      "role": "网页设计师",
+      "badge": "DESIGN",
+      "responsibilities": [
+        "使用 Photoshop 进行网页设计",
+        "设计网页布局及视觉元素",
+        "设计视觉元素、配色方案和字体排版"
+      ]
+    }
+  },
+
+  "_comment9": "=== 페이지 - ProjectDetail 번역  ===",
+   "projectDetail": {
+    "notFound": "未找到项目。",
+    "goHome": "返回首页",
+    "imageAlt": "{{title}} 项目图片 {{index}}",
+    "previousImage": "上一张图片",
+    "nextImage": "下一张图片",
+    "noImage": "项目图片准备中",
+    "techStack": "使用技术",
+    "responsibilities": "主要实现功能",
+    "otherProjects": "浏览其他项目"
+  },
+
+  "_comment10": "=== 페이지 - Wishlist 번역  ===",
+  "wishlist": {
+    "title": "收藏项目",
+    "description": "可以集中查看你感兴趣的项目。",
+    "count": "已收藏 {{count}} 个项目。",
+    "emptyTitle": "还没有收藏任何项目。",
+    "emptyDescription": "点击感兴趣项目上的爱心按钮即可收藏。",
+    "exploreProjects": "浏览项目"
+  },
+
+  "_comment11": "=== 페이지 - Mypage 번역  ===",
+  "myPage": {
+    "title": "个人主页",
+    "subtitle": "查看网页开发者金秀琳的作品集和活动信息。",
+    "profileImageAlt": "金秀琳的个人头像",
+    "profileDescription": "我是一名以用户体验和服务品质为重心的前端方向网页开发者。",
+    "statistics": {
+        "projects": "项目总数",
+        "skills": "技术栈",
+        "categories": "主要开发领域",
+        "unit": "个"
+    },
+    "menuDescription": "作品集菜单",
+    "menu": {
+        "overview": "个人主页",
+        "projects": "我的项目",
+        "wishlist": "收藏项目",
+        "skills": "技术栈",
+        "github": "GitHub"
+    },
+    "projects": {
+        "title": "我的项目",
+        "description": "查看我至今参与过的项目。",
+        "viewAll": "查看全部"
+    },
+    "categories": {
+        "title": "主要开发领域",
+        "description": "结合多样化的开发经验构建网页服务。",
+        "frontend": {
+        "title": "Frontend",
+        "description": "开发以用户为中心的界面和网页服务"
+        },
+        "fullstack": {
+        "title": "Full Stack",
+        "description": "从前端到后端构建完整服务"
+        },
+        "design": {
+        "title": "Design",
+        "description": "UI/UX及网页设计经验"
+        }
+    },
+    "skills": {
+        "title": "技术栈",
+        "description": "项目中使用的主要技术。"
+    },
+    "contact": {
+        "description": "欢迎新的工作机会与合作。"
+    }
   }
 }

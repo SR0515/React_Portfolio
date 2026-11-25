@@ -45,6 +45,29 @@ a {text-decoration: none;}
   background: #f5f7fa;
 }
 
+.loading-text {
+  display: inline-flex;
+  align-items: center;
+}
+
+.loading-letter {
+  display: inline-block;
+  animation: loading-wave 1.2s ease-in-out infinite;
+}
+
+@keyframes loading-wave {
+  0%,
+  100% {
+    color: #d1d5db;
+    transform: translateY(0);
+  }
+
+  50% {
+    color: #346aff;
+    transform: translateY(-3px);
+  }
+}
+
 @keyframes slideUp {
   from {
     opacity: 0;

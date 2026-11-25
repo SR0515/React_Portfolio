@@ -31,7 +31,8 @@ export default function MainBanner() {
 
           <p className="mt-6 max-w-[560px] text-sm leading-8 text-gray-300 sm:text-base">
             {t('mainBanner.greeting')}{' '}
-            <strong className="font-bold text-white">김수린</strong>입니다.
+            <strong className="font-bold text-white">김수린</strong>
+            {t('mainBanner.nameSuffix')}
             <br />
             {t('mainBanner.descriptionLine1')}
             <br />

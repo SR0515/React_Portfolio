@@ -1,5 +1,6 @@
 
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
 import { Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -18,6 +19,7 @@ import { projects } from '@/data/portfolio';
 import useWishlist from '@/hooks/useWishlist';
 
 export default function ProjectDetail() {
+  const { t } = useTranslation();
   const { id } = useParams();
 
   const project = projects.find((item) => item.id === Number(id));
@@ -39,14 +41,14 @@ export default function ProjectDetail() {
           <p className="mb-3 text-5xl">🔍</p>
 
           <h1 className="text-xl font-bold">
-            프로젝트를 찾을 수 없습니다.
+            {t('projectDetail.notFound')}
           </h1>
 
           <Link
             to="/"
             className="mt-5 text-sm font-semibold text-[#346AFF]"
           >
-            메인으로
+            {t('projectDetail.goHome')}
           </Link>
         </main>
 
@@ -67,7 +69,7 @@ export default function ProjectDetail() {
       />
 
       <main className="mx-auto max-w-[1000px] px-5 py-5">
-        <GNB title={project.title} />
+        <GNB title={t(project.title)} />
 
         <article className="overflow-hidden rounded-xl border border-gray-200 bg-white">
 
@@ -126,14 +128,14 @@ export default function ProjectDetail() {
               </>
             ) : (
               <div className="flex h-full items-center justify-center text-sm text-gray-400">
-                프로젝트 이미지 준비 중
+                {t('projectDetail.noImage')}
               </div>
             )}
 
             {/* 프로젝트 배지 */}
             {project.badge && (
               <span className="absolute left-5 top-5 z-10 rounded-md bg-[#346AFF] px-3 py-1.5 text-xs font-bold text-white">
-                {project.badge}
+                {t(project.badge)}
               </span>
             )}
           </div>
@@ -141,14 +143,14 @@ export default function ProjectDetail() {
           {/* 프로젝트 상세 정보 */}
           <div className="p-6 sm:p-10">
             <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-gray-400">
-              <span>{project.role}</span>
-              <span>·</span>
-              <span>{project.category}</span>
+                <span>{t(project.role)}</span>
+                <span>·</span>
+                <span>{t(`category.${project.category}`)}</span>
             </div>
 
             <div className="flex items-start justify-between gap-4">
               <h1 className="text-2xl font-bold leading-tight text-gray-900 sm:text-3xl">
-                {project.title}
+                {t(project.title)}
               </h1>
 
               {/* 찜하기 */}
@@ -178,7 +180,7 @@ export default function ProjectDetail() {
             </div>
 
             <p className="mt-4 leading-7 text-gray-600">
-              {project.overview}
+              {t(project.overview)}
             </p>
 
             <div className="my-8 border-t border-gray-100" />
@@ -186,7 +188,7 @@ export default function ProjectDetail() {
             {/* 사용 기술 */}
             <section>
               <h2 className="mb-4 text-lg font-bold text-gray-900">
-                사용 기술
+                {t('projectDetail.techStack')}
               </h2>
 
               <div className="flex flex-wrap gap-2">
@@ -204,7 +206,7 @@ export default function ProjectDetail() {
             {/* 주요 구현 기능 */}
             <section className="mt-10">
               <h2 className="mb-4 text-lg font-bold text-gray-900">
-                주요 구현 기능
+                {t('projectDetail.responsibilities')}
               </h2>
 
               <ul className="space-y-3">
@@ -217,7 +219,7 @@ export default function ProjectDetail() {
                       ✓
                     </span>
 
-                    {responsibility}
+                     {t(responsibility)}
                   </li>
                 ))}
               </ul>
@@ -231,7 +233,7 @@ export default function ProjectDetail() {
             to="/"
             className="inline-flex rounded-lg bg-[#346AFF] px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
           >
-            다른 프로젝트 둘러보기
+            {t('projectDetail.otherProjects')}
           </Link>
         </div>
       </main>
