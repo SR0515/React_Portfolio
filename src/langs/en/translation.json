@@ -1,7 +1,8 @@
 {
   "common": {
     "wishlistAdded": "Added to your wishlist.",
-    "wishlistRemoved": "Removed from your wishlist."
+    "wishlistRemoved": "Removed from your wishlist.",
+    "languageChanged": "Language has been changed."
   },
 
   "chatbot": {
@@ -189,13 +190,13 @@
         ]
     },
     "5": {
-        "title": "Payment Solution Administration System",
-        "description": "A web-based payment and settlement management system for administrators, partners, and stores.",
-        "overview": "Developed user interfaces for the administrator, partner, and store systems of a payment solution. Implemented management screens for data retrieval and input, along with reusable UI components and responsive layouts.",
-        "role": "UI Publisher",
-        "badge": "ADMIN",
+        "title": "Fintech UI Solution Design",
+        "description": "Payment and settlement management web systems for administrators, partners, merchants, and users",
+        "overview": "Developed screens for web systems designed for administrators, partners, merchants, and users of a payment solution. Implemented management interfaces for data retrieval and input, along with shared UI components and responsive layouts.",
+        "role": "UI Publishing",
+        "badge": "PAY",
         "responsibilities": [
-            "Developed the administrator system UI",
+            "Developed administrator system UIs",
             "Implemented search and data entry screens",
             "Developed reusable UI components",
             "Implemented responsive layouts"

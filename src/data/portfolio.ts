@@ -29,6 +29,18 @@ import crawling1 from '@/assets/projects/crawling/python_img1.png';
 import crawling2 from '@/assets/projects/crawling/python_img2.png';
 import crawling3 from '@/assets/projects/crawling/python_img3.png';
 
+
+// 프로젝트 5. 핀테크 UI 솔루션 설계
+import pay1 from '@/assets/projects/pay/root_pay1.png';
+import pay2 from '@/assets/projects/pay/root_pay2.png';
+import pay3 from '@/assets/projects/pay/root_pay3.png';
+import pay4 from '@/assets/projects/pay/root_pay4.png';
+import pay5 from '@/assets/projects/pay/root_pay5.png';
+import pay6 from '@/assets/projects/pay/root_pay6.png';
+import pay7 from '@/assets/projects/pay/root_pay7.png';
+import payAdmin from '@/assets/projects/pay/root_pay_admin1.png';
+
+
 // 프로젝트 6. 쇼핑몰 퍼블리싱
 import shoppingmall1 from '@/assets/projects/shop/shoppingmall_1.png';
 import shoppingmall2 from '@/assets/projects/shop/shoppingmall_2.png';
@@ -220,7 +232,17 @@ export const projects: Project[] = [
     title: 'projectData.5.title',
     description: 'projectData.5.description',
     overview: 'projectData.5.overview',
-    category: 'frontend',
+    category: 'publishing',
+    images: [
+      pay1,
+      pay2,
+      pay3,
+      pay4,
+      pay5,
+      pay6,
+      pay7,
+      payAdmin,
+    ],
     role: 'projectData.5.role',
     stack: [
       'Classic ASP',

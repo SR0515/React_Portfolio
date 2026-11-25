@@ -1,14 +1,8 @@
 
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import {
-  Search,
-  Heart,
-  UserRound,
-  Languages,
-  ChevronDown,
-  Check,
-} from 'lucide-react';
+import toast from 'react-hot-toast';
+import { Search, Heart, UserRound, Languages, ChevronDown, Check,} from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 interface HeaderProps {
@@ -39,10 +33,12 @@ export default function Header({
     languages.find((lang) => lang.code === currentLanguage) || languages[0];
 
   // 언어변경
-  const handleLanguageChange = (lang: string) => {
+  const handleLanguageChange = async (lang: string) => {
     i18n.changeLanguage(lang);
     localStorage.setItem('appLanguage', lang);
     setIsLanguageOpen(false);
+
+    toast.success(i18n.t('common.languageChanged', { lng: lang }));
   };
 
   return (

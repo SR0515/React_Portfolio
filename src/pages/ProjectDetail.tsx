@@ -86,21 +86,24 @@ export default function ProjectDetail() {
                     onSwiper={(swiper) => {swiperRef.current = swiper;}}
                     className="h-[900px] w-full"
                 >
-                    {images.map((image, index) => (
-                        <SwiperSlide key={`${project.id}-${index}`}>
-                            <div className="h-[900px] w-full overflow-y-auto bg-gray-100">
-                                <div className="flex min-h-full w-full justify-center">
-                                    <img
-                                        src={image}
-                                        alt={`${project.title} 이미지 ${index + 1}`}
-                                        className={`block h-auto w-full object-contain ${
-                                            project.id === 1 ? 'max-w-[400px]' : 'max-w-none'
-                                        }`}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
+                  {images.map((image, index) => (
+                    <SwiperSlide key={`${project.id}-${index}`}>
+                      <div className="h-[900px] w-full overflow-y-auto bg-gray-100">
+                        <div className="flex min-h-full w-full justify-center">
+                          <img
+                            src={image}
+                            alt={`${project.title} 이미지 ${index + 1}`}
+                            className={`block h-auto w-full object-contain ${
+                              project.id === 1 ||
+                              (project.id === 5 && index !== 7)
+                                ? 'max-w-[400px]'
+                                : 'max-w-none'
+                            }`}
+                          />
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
                 </Swiper>
 
                 {/* 이전 / 다음 버튼 */}
