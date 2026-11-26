@@ -1,10 +1,11 @@
 
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import type { SortOrder } from '@/store/useProjectStore';
 
 interface ProjectFilterProps {
-  sort: string;
-  onSortChange: (value: string) => void;
+  sort: SortOrder;
+  onSortChange: (value: SortOrder) => void;
   selectedTech: string;
   onTechChange: (value: string) => void;
   techOptions: string[];

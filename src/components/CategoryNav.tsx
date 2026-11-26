@@ -22,7 +22,7 @@ export default function CategoryNav({
 
   return (
     <nav className="border-b border-gray-200 bg-white">
-      <div className="mx-auto flex max-w-[1200px] items-center gap-2 overflow-x-auto px-5 py-3">
+      <div className="mx-auto flex max-w-300 items-center gap-2 overflow-x-auto px-5 py-3">
         {categories.map((category) => {
           const Icon = category.icon;
           const isSelected = selected === category.id;

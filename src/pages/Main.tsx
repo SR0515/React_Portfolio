@@ -1,5 +1,5 @@
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import Header from '@/components/Header';
 import CategoryNav from '@/components/CategoryNav';
 import MainBanner from '@/components/MainBanner';
@@ -9,12 +9,19 @@ import TechSection from '@/components/TechSection';
 import Footer from '@/components/Footer';
 import { projects } from '@/data/portfolio';
 import useWishlist from '@/hooks/useWishlist';
+import { useProjectStore } from '@/store/useProjectStore';
 
 export default function Main() {
-  const [search, setSearch] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedTech, setSelectedTech] = useState('all');
-  const [sort, setSort] = useState('oldest');
+  const {
+    searchKeyword,
+    selectedCategory,
+    selectedTech,
+    sortOrder,
+    setSearchKeyword,
+    setCategory,
+    setTech,
+    setSortOrder,
+  } = useProjectStore();
 
   const { wishlist, toggleWishlist } = useWishlist();
 
@@ -24,7 +31,7 @@ export default function Main() {
   );
 
   const filteredProjects = useMemo(() => {
-    const keyword = search.trim().toLowerCase();
+    const keyword = searchKeyword.trim().toLowerCase();
 
     const result = projects.filter((project) => {
       const matchesCategory =
@@ -47,45 +54,45 @@ export default function Main() {
     });
 
     return [...result].sort((a, b) => {
-      if (sort === 'latest') {
+      if (sortOrder === 'latest') {
         return b.id - a.id;
       }
 
-      if (sort === 'oldest') {
+      if (sortOrder === 'oldest') {
         return a.id - b.id;
       }
 
-      if (sort === 'name') {
+      if (sortOrder === 'name') {
         return a.title.localeCompare(b.title, 'ko');
       }
 
       return 0;
     });
-  }, [search, selectedCategory, selectedTech, sort]);
+  }, [searchKeyword, selectedCategory, selectedTech, sortOrder]);
 
   return (
     <div className="min-h-screen bg-white">
       <Header
-        search={search}
-        onSearchChange={setSearch}
+        search={searchKeyword}
+        onSearchChange={setSearchKeyword}
         wishlistCount={wishlist.length}
       />
 
       <CategoryNav
         selected={selectedCategory}
-        onSelect={setSelectedCategory}
+        onSelect={setCategory}
       />
 
       <main className="mx-auto">
         {selectedCategory === 'all' && <MainBanner />}
 
-        <div className="mx-auto max-w-[1200px] px-5">
+        <div className="mx-auto max-w-300 px-5">
           <div className="mt-5 w-full sm:ml-auto sm:w-[30%]">
             <ProjectFilter
-              sort={sort}
-              onSortChange={setSort}
+              sort={sortOrder}
+              onSortChange={setSortOrder}
               selectedTech={selectedTech}
-              onTechChange={setSelectedTech}
+              onTechChange={setTech}
               techOptions={techOptions}
               resultCount={filteredProjects.length}
             />
@@ -95,11 +102,10 @@ export default function Main() {
             projects={filteredProjects}
             wishlist={wishlist}
             onToggleWishlist={toggleWishlist}
-            search={search}
+            search={searchKeyword}
           />
 
           <TechSection />
-          {/* <JournalSection /> */}
         </div>
       </main>
 

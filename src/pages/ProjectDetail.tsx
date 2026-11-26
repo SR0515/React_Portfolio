@@ -37,7 +37,7 @@ export default function ProjectDetail() {
           wishlistCount={wishlist.length}
         />
 
-        <main className="mx-auto flex min-h-[60vh] max-w-[1200px] flex-col items-center justify-center px-5">
+        <main className="mx-auto flex min-h-[60vh] max-w-300 flex-col items-center justify-center px-5">
           <p className="mb-3 text-5xl">🔍</p>
 
           <h1 className="text-xl font-bold">
@@ -68,7 +68,7 @@ export default function ProjectDetail() {
         wishlistCount={wishlist.length}
       />
 
-      <main className="mx-auto max-w-[1000px] px-5 py-5">
+      <main className="mx-auto max-w-250 px-5 py-5">
         <GNB title={t(project.title)} />
 
         <article className="overflow-hidden rounded-xl border border-gray-200 bg-white">
@@ -84,11 +84,11 @@ export default function ProjectDetail() {
                     pagination={images.length > 1 ? { clickable: true } : false}
                     loop={images.length > 1}
                     onSwiper={(swiper) => {swiperRef.current = swiper;}}
-                    className="h-[900px] w-full"
+                    className="h-255 w-full"
                 >
                   {images.map((image, index) => (
                     <SwiperSlide key={`${project.id}-${index}`}>
-                      <div className="h-[900px] w-full overflow-y-auto bg-gray-100">
+                      <div className="h-225 w-full overflow-y-auto bg-gray-100">
                         <div className="flex min-h-full w-full justify-center">
                           <img
                             src={image}
@@ -96,7 +96,7 @@ export default function ProjectDetail() {
                             className={`block h-auto w-full object-contain ${
                               project.id === 1 ||
                               (project.id === 5 && index !== 7)
-                                ? 'max-w-[400px]'
+                                ? 'max-w-100'
                                 : 'max-w-none'
                             }`}
                           />

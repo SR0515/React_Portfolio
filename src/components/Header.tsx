@@ -35,7 +35,7 @@ export default function Header({
   // 언어변경
   const handleLanguageChange = async (lang: string) => {
     i18n.changeLanguage(lang);
-    localStorage.setItem('appLanguage', lang);
+    sessionStorage.setItem('appLanguage', lang);
     setIsLanguageOpen(false);
 
     toast.success(i18n.t('common.languageChanged', { lng: lang }));
@@ -44,7 +44,7 @@ export default function Header({
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
       {/* PC 헤더 */}
-      <div className="mx-auto flex h-[76px] max-w-[1200px] items-center gap-6 px-5">
+      <div className="mx-auto flex h-19 max-w-300 items-center gap-6 px-5">
         {/* 왼쪽 로고 */}
         <div className="shrink-0">
           <Link
@@ -57,7 +57,7 @@ export default function Header({
 
         {/* 가운데 검색창 */}
         <div className="hidden min-w-0 flex-1 justify-center md:flex">
-          <div className="w-full max-w-[600px]">
+          <div className="w-full max-w-150">
             <div className="flex h-11 overflow-hidden rounded-4xl border-2 border-[#346AFF] transition focus-within:ring-2 focus-within:ring-blue-100">
               <input
                 type="text"

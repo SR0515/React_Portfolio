@@ -25,7 +25,7 @@ export default function Wishlist() {
         wishlistCount={wishlist.length}
       />
 
-      <main className="mx-auto min-h-[65vh] max-w-[1200px] px-5 py-12">
+      <main className="mx-auto min-h-[65vh] max-w-300 px-5 py-12">
         <div className="mb-8">
           <p className="mb-1 text-xs font-bold tracking-widest text-[#346AFF]">
             MY WISHLIST

@@ -33,24 +33,24 @@
     },
     "suggestions": {
         "projects": {
-        "title": "Key Projects",
-        "description": "What projects have you worked on?",
-        "message": "What projects are included in your portfolio?"
+            "title": "Key Projects",
+            "description": "What projects have you worked on?",
+            "message": "What projects are included in your portfolio?"
         },
         "skills": {
-        "title": "Tech Stack",
-        "description": "What technologies can you use?",
-        "message": "What are Kim Su-rin's key technical skills?"
+            "title": "Tech Stack",
+            "description": "What technologies can you use?",
+            "message": "What are Kim Su-rin's key technical skills?"
         },
         "responsibilities": {
-        "title": "Project Responsibilities",
-        "description": "Explore the responsibilities and tech stacks of all 8 projects.",
-        "message": "What responsibilities did you have across your projects?"
+            "title": "Project Responsibilities",
+            "description": "Explore the responsibilities and tech stacks of all 8 projects.",
+            "message": "What responsibilities did you have across your projects?"
         },
         "implementation": {
-        "title": "AI Chatbot Implementation",
-        "description": "How was this portfolio chatbot built?",
-        "message": "What technologies were used to build this portfolio's AI chatbot, and how was it implemented?"
+            "title": "AI Chatbot Implementation",
+            "description": "How was this portfolio chatbot built?",
+            "message": "What technologies were used to build this portfolio's AI chatbot, and how was it implemented?"
         }
     }
   },
@@ -126,120 +126,153 @@
 
   "_comment8": "=== 프로젝트 data 번역  ===",
   "projectData": {
-    "1": {
-        "title": "Integrated Accommodation Reservation System",
-        "description": "A mobile-focused platform for searching and booking various types of accommodations in one place.",
-        "overview": "I was responsible for frontend development of a platform that integrates accommodation search and booking. Based on Figma designs, I implemented a mobile-focused responsive UI, integrated REST APIs, managed global state, and established a multilingual environment to deliver a user-centered booking experience.",
-        "role": "Frontend Developer",
-        "badge": "Frontend",
-        "responsibilities": [
-            "Designed and developed an SPA architecture using React 19, TypeScript, and Vite",
-            "Designed a shared API request structure and reusable UI components",
-            "Implemented a mobile-focused responsive UI based on Figma designs",
-            "Developed touch interactions, slide UI, and bottom sheets using Tailwind CSS 4",
-            "Managed global state for authentication, accommodation selection, dates, and guest counts using Zustand",
-            "Integrated REST APIs for search filters, accommodation details, wishlists, coupons, points, and reservations",
-            "Implemented map navigation and marker interactions using the Kakao Map API",
-            "Established a four-language environment using i18next: Korean, English, Japanese, and Chinese"
-        ]
+        "1": {
+            "title": "Integrated Accommodation Reservation Platform",
+            "description": "A mobile-first accommodation platform for searching and booking various types of properties",
+            "overview": "Developed the frontend of a mobile-first platform that integrates accommodation search and booking. Implemented user interfaces based on Figma designs, integrated REST APIs, and designed global state management. Also improved API collaboration with backend developers and extracted common API request logic to enhance code reusability and maintainability.",
+            "role": "Frontend Developer",
+            "badge": "Frontend",
+            "responsibilities": [
+                "Developed key UI screens including the home page, accommodation search, property details, map, and My Page based on Figma designs",
+                "Implemented mobile-first responsive layouts using React 19 and Tailwind CSS 4",
+                "Developed reusable UI components and interactive elements such as sliders and bottom sheets",
+                "Extracted common API hooks and request functions for handling REST API requests and responses",
+                "Reduced duplicated code by centralizing reusable API request logic",
+                "Integrated APIs for search filters, property details, favorites, coupons, points, and reservation history",
+                "Organized required API parameters and response fields in advance and shared them with backend developers",
+                "Used Zustand to manage authentication, user information, selected properties, and reservation dates globally",
+                "Managed selected language information and included it in API request parameters",
+                "Integrated Kakao Map API for map-based accommodation search and marker interactions",
+                "Implemented a four-language environment using i18next: Korean, English, Japanese, and Chinese"
+            ]
+        },
+            "2": {
+            "title": "Settlement System Modernization and Full-Stack Development",
+            "description": "An integrated settlement management system for administrators, partners, and merchants",
+            "overview": "Participated in modernizing a legacy settlement system built with Classic ASP using SvelteKit and Node.js. Developed frontend and backend features for administrator, partner, and merchant systems. Separated the SvelteKit frontend from the Express and Sequelize-based REST API server, and implemented API documentation, testing, role-based authentication, and global state management.",
+            "role": "Full-Stack Developer",
+            "badge": "FULL STACK",
+            "responsibilities": [
+                "Migrated the legacy Classic ASP settlement system to SvelteKit and TypeScript",
+                "Separated the SvelteKit frontend and Node.js + Express backend API server",
+                "Defined component structures and API data types using TypeScript",
+                "Developed RESTful CRUD APIs using Express and Sequelize ORM",
+                "Integrated MySQL and implemented settlement data processing logic",
+                "Developed role-based data access, search, filtering, and pagination features",
+                "Created API specifications using Swagger (OpenAPI)",
+                "Shared API request parameters and response structures between frontend and backend teams",
+                "Tested API requests and responses using Swagger UI",
+                "Implemented role-based authentication for administrators, partners, and merchants",
+                "Managed login user information and authentication state using Svelte Store",
+                "Separated authentication state from common service settings and application state"
+            ]
+        },
+        "3": {
+            "title": "Multi-Domain Platform and Admin System Development",
+            "description": "A multi-domain web platform and administration system managed from a single codebase",
+            "overview": "Developed a multi-domain platform and administration system that operates multiple websites from a single codebase. Used SvelteKit SSR and Server Routes to integrate frontend pages and backend APIs without a separate backend server. Integrated PostgreSQL with Sequelize ORM for server-side data processing and administration dashboard features. Also developed Python scripts to generate QR code and SVG resources.",
+            "role": "Full-Stack Developer",
+            "badge": "PLATFORM",
+            "responsibilities": [
+                "Developed multi-domain routing using SvelteKit SSR and file-based routing",
+                "Built multiple websites within a single SvelteKit application",
+                "Implemented server-side API endpoints using +server.ts without a separate Express server",
+                "Integrated PostgreSQL with Sequelize ORM",
+                "Developed server-side data retrieval and processing APIs",
+                "Implemented domain-based routing logic to display different services and data",
+                "Developed administration screens for operational data and statistics dashboards",
+                "Created Python scripts to generate QR code images for domain-specific URLs"
+            ]
+        },
+        "4": {
+            "title": "Automated E-commerce Product Data Collection System",
+            "description": "An automated product data collection and database storage system using Selenium and Requests",
+            "overview": "Developed a Python-based system to automatically collect product information from login-protected shopping websites and store it in a database. Combined Selenium-based login and session management with Requests-based data collection. Implemented data parsing, cleaning, duplicate prevention, progress logging, and automated PostgreSQL storage.",
+            "role": "Backend Developer",
+            "badge": "AUTOMATION",
+            "responsibilities": [
+                "Automated dynamic website access and login using Selenium",
+                "Obtained valid authentication tokens and session information during login",
+                "Applied authentication information to Requests headers for product data retrieval",
+                "Built a hybrid crawler combining Selenium browser automation and Requests",
+                "Used regular expressions to extract product information",
+                "Processed and cleaned response data into structured JSON",
+                "Automatically stored cleaned product data in PostgreSQL",
+                "Prevented duplicate collection by checking existing records using unique product identifiers",
+                "Logged collection progress and processing results in the terminal",
+                "Improved error tracking by recording the last collection stage before interruptions"
+            ]
+        },
+        "5": {
+            "title": "Web Service Deployment and Server Infrastructure Operations",
+            "description": "Deployment and operation of SvelteKit and Node.js-based web services",
+            "overview": "Participated in configuring deployment and production environments for SvelteKit and Node.js web services. Worked with Windows Server and IIS, configured network and firewall ports, and managed Node.js application processes using PM2.",
+            "role": "Deployment and Infrastructure",
+            "badge": "INFRASTRUCTURE",
+            "responsibilities": [
+                "Created websites and configured domains and services using IIS Manager on Windows Server",
+                "Configured Windows Firewall inbound rules and router port forwarding for external access",
+                "Deployed services in an environment using IIS reverse proxy",
+                "Configured the Node.js production environment using the SvelteKit build output (build/index.js)",
+                "Managed ports, host settings, environment variables, and process options through PM2 ecosystem configuration",
+                "Registered Node.js applications with PM2 and configured automatic restarts",
+                "Configured log file separation and restart policies to monitor application status and errors"
+            ]
+        },
+        "6": {
+            "title": "React-Based Responsive One-Page Website",
+            "description": "A responsive corporate website developed using React with multilingual support",
+            "overview": "Participated in developing a corporate website using React, building a one-page layout and implementing its user interface. Also applied react-i18next to support Korean and multiple language options.",
+            "role": "Frontend Developer",
+            "badge": "WEB",
+            "responsibilities": [
+                "Designed and implemented a one-page website layout using React",
+                "Developed web interfaces using HTML and CSS",
+                "Implemented responsive layouts for different screen sizes",
+                "Organized reusable UI elements into React components",
+                "Integrated react-i18next for multilingual translation",
+                "Implemented language switching for page content and text"
+            ]
+        },
+        "7": {
+            "title": "Payment Solution Admin and User Interface Publishing",
+            "description": "UI publishing for administrator dashboards and user-facing payment pages",
+            "overview": "Participated in a Classic ASP-based payment solution project, contributing to UI publishing for administrator, partner, and merchant dashboards, as well as user-facing payment pages.",
+            "role": "UI Developer",
+            "badge": "PAYMENT",
+            "responsibilities": [
+                "Participated in UI publishing for administrator, partner, and merchant dashboards",
+                "Implemented HTML and CSS interfaces for data search, viewing, and management screens",
+                "Published user-facing payment service pages",
+                "Implemented payment page layouts with a user flow similar to PayApp"
+            ]
+        },
+        "8": {
+            "title": "E-commerce Website Development and Customization",
+            "description": "Shopping mall UI publishing and GnuBoard theme customization",
+            "overview": "Participated in developing the BerryMall shopping website built with Classic ASP. Worked on user-facing website publishing and customized a GnuBoard-based shopping mall theme.",
+            "role": "UI Developer",
+            "badge": "E-COMMERCE",
+            "responsibilities": [
+                "Participated in UI publishing for the BerryMall shopping website",
+                "Implemented shopping mall interfaces using HTML, CSS, and JavaScript",
+                "Modified layouts and visual elements of a GnuBoard-based shopping mall theme",
+                "Customized existing theme interfaces to meet project requirements"
+            ]
+        },
+        "9": {
+            "title": "Flutter-Based Payment Application UI Development",
+            "description": "Reimplementation of an existing web payment service UI as a Flutter mobile application",
+            "overview": "Participated in rebuilding the UI of an existing SvelteKit-based payment service as a Flutter mobile application. Used the existing web interface as a reference to implement mobile screens with Flutter Widgets and tested the layouts using Android Emulator.",
+            "role": "Mobile UI Developer",
+            "badge": "MOBILE",
+            "responsibilities": [
+                "Reimplemented existing SvelteKit web screens using Flutter Widgets",
+                "Developed mobile-friendly layouts and UI elements",
+                "Tested and verified screens using Android Emulator"
+            ]
+        }
     },
-    "2": {
-        "title": "Settlement System Enhancement and Full-Stack Development",
-        "description": "An integrated settlement system for managing settlement data across administrators, partners, and stores.",
-        "overview": "Participated in enhancing an existing Classic ASP-based settlement system using SvelteKit and Node.js. Developed both frontend and backend features for administrator, partner, and store systems, while improving the application structure and implementing data management features with TypeScript.",
-        "role": "Full-Stack Developer",
-        "badge": "FULL STACK",
-        "responsibilities": [
-            "Migrated a legacy Classic ASP system to a SvelteKit and TypeScript environment",
-            "Defined component structures and API data types for settlement and access control",
-            "Developed CRUD APIs using Express and Sequelize",
-            "Integrated MySQL and implemented data processing logic",
-            "Developed access control and data retrieval features for administrators, partners, and stores",
-            "Implemented search and pagination features",
-            "Created API documentation using Swagger (OpenAPI)"
-        ]
-    },
-    "3": {
-        "title": "Multi-Domain Platform and Admin System",
-        "description": "A web platform operating multiple domains from a single codebase, with QR traffic analytics.",
-        "overview": "Built a website and administration system capable of operating multiple domains from a single codebase. Designed domain-specific routing for traffic analysis and developed QR traffic log collection, statistical dashboards, and automated resource generation.",
-        "role": "Full-Stack Developer",
-        "badge": "PLATFORM",
-        "responsibilities": [
-            "Designed domain-specific routing based on SvelteKit SSR",
-            "Built a multi-domain website using a single application",
-            "Integrated a PostgreSQL database",
-            "Implemented QR traffic analytics log collection",
-            "Developed an administrator analytics dashboard",
-            "Generated QR codes and SVG resources using Python"
-        ]
-    },
-    "4": {
-        "title": "Automated E-commerce Product Data Collection System",
-        "description": "An automated system for collecting and storing e-commerce product data using Selenium and Requests.",
-        "overview": "Built a data collection system that automatically gathers product information from multiple online stores and stores it in a database. Combined Selenium-based login and session management with Requests-based data collection, then developed a process to clean and store the collected data in PostgreSQL.",
-        "role": "Backend Developer",
-        "badge": "AUTOMATION",
-        "responsibilities": [
-            "Implemented e-commerce login and session management using Selenium",
-            "Developed product data collection using Requests",
-            "Built a hybrid crawler combining Selenium and Requests",
-            "Parsed product data using regular expressions",
-            "Implemented JSON data cleaning and transformation",
-            "Developed automated data ingestion into PostgreSQL"
-        ]
-    },
-    "5": {
-        "title": "Fintech UI Solution Design",
-        "description": "Payment and settlement management web systems for administrators, partners, merchants, and users",
-        "overview": "Developed screens for web systems designed for administrators, partners, merchants, and users of a payment solution. Implemented management interfaces for data retrieval and input, along with shared UI components and responsive layouts.",
-        "role": "UI Publishing",
-        "badge": "PAY",
-        "responsibilities": [
-            "Developed administrator system UIs",
-            "Implemented search and data entry screens",
-            "Developed reusable UI components",
-            "Implemented responsive layouts"
-        ]
-    },
-    "6": {
-        "title": "E-commerce Website Development and Management System",
-        "description": "Development of e-commerce ordering, membership, payment, and administration features.",
-        "overview": "Developed screens related to orders, memberships, and payments, and improved administrator features as part of an e-commerce website project. Maintained the existing store management system and customized GNUBoard-based features to meet project requirements.",
-        "role": "UI Publisher",
-        "badge": "E-COMMERCE",
-        "responsibilities": [
-            "Developed and maintained e-commerce website interfaces",
-            "Developed UI for orders, memberships, and payments",
-            "Improved administrator screens for order and sales management",
-            "Customized features based on GNUBoard"
-        ]
-    },
-    "7": {
-        "title": "Flutter-based Payment Application UI Development",
-        "description": "Development of a mobile payment application UI using Flutter widgets.",
-        "overview": "Participated in developing a mobile application for a Flutter-based payment solution. Implemented mobile UI using Flutter widgets and tested screen behavior and layouts in the Android Emulator environment.",
-        "role": "Mobile UI Developer",
-        "badge": "MOBILE",
-        "responsibilities": [
-            "Developed mobile UI using Flutter widgets",
-            "Implemented mobile layouts and responsive UI",
-            "Tested screens in the Android Emulator environment"
-        ]
-    },
-    "8": {
-        "title": "Web Design Using Photoshop",
-        "description": "Web design and visual content creation using Photoshop.",
-        "overview": "Created designs for web services using Photoshop, focusing on visual quality and user experience.",
-        "role": "Web Designer",
-        "badge": "DESIGN",
-        "responsibilities": [
-            "Created web designs using Photoshop",
-            "Designed web page layouts and visual elements",
-            "Designed visual elements, color schemes, and typography"
-        ]
-    }
-  },
 
   "_comment9": "=== 페이지 - ProjectDetail 번역  ===",
   "projectDetail": {

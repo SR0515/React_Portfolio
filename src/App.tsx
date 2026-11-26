@@ -14,7 +14,10 @@ export default function App() {
       <ScrollToTop />
 
       <Toaster
-        position="top-right"
+        position="top-center"
+        containerStyle={{
+          top: '70px',
+        }}
         toastOptions={{
           duration: 1500,
           style: {

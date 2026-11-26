@@ -33,24 +33,24 @@
     },
     "suggestions": {
         "projects": {
-        "title": "主要项目",
-        "description": "参与过哪些项目？",
-        "message": "作品集中有哪些项目？"
+          "title": "主要项目",
+          "description": "参与过哪些项目？",
+          "message": "作品集中有哪些项目？"
         },
         "skills": {
-        "title": "技术栈",
-        "description": "想了解你掌握的技术。",
-        "message": "金秀琳开发者的核心技术能力有哪些？"
+          "title": "技术栈",
+          "description": "想了解你掌握的技术。",
+          "message": "金秀琳开发者的核心技术能力有哪些？"
         },
         "responsibilities": {
-        "title": "各项目负责的工作",
-        "description": "了解8个项目的主要工作和技术栈。",
-        "message": "你在各个项目中具体负责了哪些工作？"
+          "title": "各项目负责的工作",
+          "description": "了解8个项目的主要工作和技术栈。",
+          "message": "你在各个项目中具体负责了哪些工作？"
         },
         "implementation": {
-        "title": "AI 聊天机器人的实现方式",
-        "description": "这个作品集聊天机器人是如何制作的？",
-        "message": "这个作品集的 AI 聊天机器人使用了哪些技术，又是如何实现的？"
+          "title": "AI 聊天机器人的实现方式",
+          "description": "这个作品集聊天机器人是如何制作的？",
+          "message": "这个作品集的 AI 聊天机器人使用了哪些技术，又是如何实现的？"
         }
     }
   },
@@ -126,121 +126,153 @@
 
   "_comment8": "=== 프로젝트 data 번역  ===",
   "projectData": {
-    "1": {
+      "1": {
       "title": "综合住宿预订系统",
-      "description": "一个以移动端为中心、支持多种住宿设施统一搜索和预订的平台",
-      "overview": "负责整合各类住宿搜索与预订平台的前端开发。基于 Figma 设计实现移动端优先的响应式 UI，并完成 REST API 对接、全局状态管理和多语言环境配置，提供以用户体验为中心的预订服务。",
+      "description": "以移动端为中心，可统一搜索和预订多种住宿设施的平台",
+      "overview": "负责开发可统一搜索和预订多种住宿设施的平台前端。根据 Figma 设计稿实现用户界面，完成 REST API 对接和全局状态管理。同时优化与后端开发人员的 API 协作流程，并将通用 API 请求逻辑独立封装，提高代码复用性和可维护性。",
       "role": "前端开发",
       "badge": "Frontend",
       "responsibilities": [
-        "基于 React 19、TypeScript 和 Vite 设计并开发 SPA 架构",
-        "设计通用 API 请求结构和可复用 UI 组件",
-        "根据 Figma 设计实现移动端优先的响应式 UI",
-        "使用 Tailwind CSS 4 开发触控交互、轮播 UI 和底部弹层",
-        "使用 Zustand 管理用户认证、住宿选择、日期及入住人数等全局状态",
-        "对接搜索筛选、住宿详情、收藏、优惠券、积分和预订记录等 REST API",
-        "基于 Kakao Map API 实现地图浏览和标记交互",
-        "使用 i18next 构建韩语、英语、日语和中文四种语言环境"
+        "根据 Figma 设计稿开发首页、住宿搜索、详情、地图和个人中心等主要页面",
+        "使用 React 19 和 Tailwind CSS 4 实现以移动端为中心的响应式布局",
+        "开发通用 UI 组件、轮播组件和 Bottom Sheet 等交互元素",
+        "封装用于 REST API 请求和响应处理的通用 API Hook 与调用函数",
+        "通过统一 API 请求逻辑减少重复代码",
+        "对接搜索筛选、住宿详情、收藏、优惠券、积分和预订记录等服务 API",
+        "提前整理 API 所需的请求参数和响应字段，并与后端开发人员共享",
+        "使用 Zustand 全局管理用户认证、用户信息、选中住宿和预订日期",
+        "管理用户选择的语言信息，并将其作为 API 请求参数传递给服务器",
+        "集成 Kakao Map API，实现地图住宿搜索、标记和地图交互功能",
+        "使用 i18next 实现韩语、英语、日语和中文四种语言支持"
       ]
     },
     "2": {
       "title": "结算系统升级与全栈开发",
-      "description": "用于管理管理员、合作伙伴及加盟店结算数据的综合结算系统",
-      "overview": "参与将原有基于 Classic ASP 的结算系统升级为 SvelteKit 和 Node.js 架构的项目。负责管理员、合作伙伴及加盟店系统的前后端开发，并使用 TypeScript 改进系统结构及实现数据管理功能。",
+      "description": "面向管理员、合作伙伴和加盟商的综合结算管理系统",
+      "overview": "参与将原有 Classic ASP 结算系统升级至 SvelteKit 和 Node.js 技术环境的项目。负责管理员、合作伙伴和加盟商系统的前后端开发，并构建分离式架构，将 SvelteKit 前端与基于 Express 和 Sequelize 的 REST API 服务端分开管理。同时使用 Swagger 建立 API 文档和测试环境，并实现基于用户权限的认证和全局状态管理。",
       "role": "全栈开发",
       "badge": "FULL STACK",
       "responsibilities": [
-        "将基于 Classic ASP 的旧系统迁移至 SvelteKit + TypeScript 环境",
-        "定义结算及权限相关组件和 API 数据类型",
-        "基于 Express + Sequelize 开发 CRUD API",
-        "对接 MySQL 数据库并实现数据处理逻辑",
-        "开发管理员、合作伙伴及加盟店的权限管理和数据查询功能",
-        "实现搜索和分页功能",
-        "使用 Swagger（OpenAPI）编写 API 文档"
+        "将基于 Classic ASP 的旧版结算系统迁移至 SvelteKit + TypeScript 环境",
+        "分离 SvelteKit 前端与 Node.js + Express 后端 API 服务",
+        "使用 TypeScript 定义组件结构和 API 数据类型",
+        "使用 Express 和 Sequelize ORM 开发 RESTful CRUD API",
+        "连接 MySQL 数据库并实现结算数据处理逻辑",
+        "开发基于用户权限的数据访问、搜索、筛选和分页功能",
+        "使用 Swagger（OpenAPI）编写 API 规范文档",
+        "在前后端团队之间共享 API 请求参数和响应数据结构",
+        "通过 Swagger UI 测试 API 请求和响应",
+        "实现管理员、合作伙伴和加盟商的分级认证",
+        "使用 Svelte Store 管理登录用户信息和认证状态",
+        "将用户认证状态与通用服务设置及基础状态分离管理"
       ]
     },
     "3": {
-      "title": "多域名综合平台与管理系统",
-      "description": "通过单一代码库运营多个域名的网站平台及 QR 流量分析系统",
-      "overview": "构建了一个基于单一代码库运营多个域名的网站和管理系统。设计了用于分析各域名流量的路由结构，并开发 QR 流量日志收集、统计仪表板及资源自动生成功能。",
+      "title": "多域名综合平台及管理系统开发",
+      "description": "基于单一代码库运行多个域名的 Web 平台和管理系统",
+      "overview": "开发了基于单一代码库运行多个域名的综合平台和管理系统。利用 SvelteKit SSR 和 Server Routes，在不单独部署后端服务器的情况下统一管理前端页面和 API。通过连接 PostgreSQL 和 Sequelize ORM，实现服务端数据处理及管理后台统计功能。此外，还使用 Python 开发 QR Code 和 SVG 资源生成脚本。",
       "role": "全栈开发",
       "badge": "PLATFORM",
       "responsibilities": [
-        "设计基于 SvelteKit SSR 的域名路由结构",
-        "基于单一应用构建多域名网站",
-        "对接 PostgreSQL 数据库",
-        "实现 QR 流量分析日志收集算法",
-        "开发管理员统计仪表板",
-        "使用 Python 生成 QR 码和 SVG 资源"
+        "利用 SvelteKit SSR 和基于文件的路由开发多域名运行结构",
+        "在单个 SvelteKit 应用中构建多个网站",
+        "使用 +server.ts 实现服务端 API，无需单独部署 Express 服务器",
+        "连接 PostgreSQL 数据库和 Sequelize ORM",
+        "开发服务端数据查询和处理 API",
+        "实现根据访问域名区分服务页面和数据的路由逻辑",
+        "开发管理后台运营数据查询页面和统计仪表盘",
+        "使用 Python 脚本生成各域名对应 URL 的二维码图片"
       ]
     },
     "4": {
       "title": "电商商品数据自动采集系统",
-      "description": "使用 Selenium 和 Requests 自动采集电商商品信息并存储数据的系统",
-      "overview": "构建了一个能够自动采集多个电商平台商品信息并写入数据库的数据采集系统。结合 Selenium 登录及会话管理与 Requests 数据采集方式，开发数据清洗处理流程，并将采集结果保存至 PostgreSQL。",
+      "description": "使用 Selenium 和 Requests 自动采集商品信息并存储至数据库的系统",
+      "overview": "开发了基于 Python 的数据采集系统，用于自动获取需要登录认证的电商网站商品信息并存入数据库。结合 Selenium 登录和会话管理与 Requests 数据采集，实现商品数据解析、清洗、重复数据防止、进度日志记录以及自动存储至 PostgreSQL。",
       "role": "后端开发",
       "badge": "AUTOMATION",
       "responsibilities": [
-        "使用 Selenium 实现电商网站登录及会话管理",
-        "使用 Requests 开发商品数据采集结构",
+        "使用 Selenium 实现动态网页访问和登录处理",
+        "在登录过程中获取有效的认证令牌和会话信息",
+        "将认证信息应用于 Requests 请求头以获取商品数据",
         "构建结合 Selenium 和 Requests 的混合爬虫",
-        "基于正则表达式解析商品数据",
-        "实现 JSON 数据清洗与转换流程",
-        "开发自动写入 PostgreSQL 数据库的功能"
+        "使用正则表达式提取商品信息",
+        "将响应数据整理并转换为 JSON 格式",
+        "将清洗后的商品数据自动存储至 PostgreSQL",
+        "根据商品唯一标识检查已有数据，防止重复采集",
+        "在终端输出采集进度和处理结果日志",
+        "记录采集阶段信息，便于在任务中断时确认最后的处理位置"
       ]
     },
     "5": {
-        "title": "金融科技 UI 解决方案设计",
-        "description": "面向管理员、合作伙伴、加盟商及用户的支付与结算管理 Web 系统",
-        "overview": "负责支付解决方案中面向管理员、合作伙伴、加盟商及用户的 Web 系统页面开发。实现了用于数据查询和录入的管理界面，并开发了通用 UI 组件和响应式布局。",
-        "role": "UI 页面开发",
-        "badge": "PAY",
-        "responsibilities": [
-            "管理员系统 UI 开发",
-            "搜索及数据录入页面实现",
-            "通用 UI 组件开发",
-            "响应式布局实现"
-        ]
+      "title": "Web 服务部署与服务器基础设施运维",
+      "description": "SvelteKit 和 Node.js Web 服务的部署与运行环境管理",
+      "overview": "参与配置基于 SvelteKit 和 Node.js 的 Web 服务部署及生产环境。在 Windows Server 环境中配置 IIS 网站、网络和防火墙端口，并使用 PM2 管理 Node.js 应用进程。",
+      "role": "部署与基础设施运维",
+      "badge": "INFRASTRUCTURE",
+      "responsibilities": [
+        "使用 Windows Server 的 IIS Manager 创建网站并配置域名和服务",
+        "配置 Windows 防火墙入站规则和路由器端口转发",
+        "在使用 IIS 反向代理的环境中部署服务",
+        "使用 SvelteKit 构建产物（build/index.js）配置 Node.js 生产环境",
+        "通过 PM2 ecosystem 配置管理端口、主机、环境变量和进程运行选项",
+        "将 Node.js 应用注册至 PM2 并配置自动重启",
+        "配置日志文件分离和重启策略，以便监控运行状态和错误"
+      ]
     },
     "6": {
-      "title": "电商网站搭建与运营系统",
-      "description": "开发电商订单、会员、支付功能及后台管理系统",
-      "overview": "在电商网站建设项目中开发订单、会员及支付相关页面，并改进管理员功能。负责维护现有电商运营系统，并根据项目需求定制基于 GNUBoard 的功能。",
-      "role": "UI 页面开发",
-      "badge": "E-COMMERCE",
+      "title": "React 响应式单页网站开发",
+      "description": "使用 React 开发并支持多语言的企业单页网站",
+      "overview": "参与基于 React 的企业网站开发，负责单页网站的页面结构和 UI 实现。使用 react-i18next 实现韩语及其他语言之间的切换功能。",
+      "role": "前端开发",
+      "badge": "WEB",
       "responsibilities": [
-        "开发并维护电商网站页面",
-        "开发订单、会员及支付相关 UI",
-        "改进管理员订单及销售管理页面",
-        "定制基于 GNUBoard 的功能"
+        "使用 React 构建单页网站的页面结构并实现 UI",
+        "使用 HTML 和 CSS 完成网页制作",
+        "实现适配不同屏幕尺寸的响应式布局",
+        "将可复用的 UI 元素封装为 React 组件",
+        "使用 react-i18next 实现多语言翻译功能",
+        "实现根据所选语言切换页面内容和文本"
       ]
     },
     "7": {
-      "title": "基于 Flutter 的支付应用 UI 开发",
-      "description": "使用 Flutter Widget 开发移动支付解决方案应用 UI",
-      "overview": "参与基于 Flutter 的支付解决方案移动应用开发。使用 Flutter Widget 实现移动端 UI，并在 Android Emulator 环境中测试页面交互和布局。",
-      "role": "移动端 UI 开发",
-      "badge": "MOBILE",
+      "title": "支付解决方案管理后台及用户页面制作",
+      "description": "管理员后台和用户支付页面的 UI 制作",
+      "overview": "参与基于 Classic ASP 的支付解决方案项目，负责管理员、合作伙伴和加盟商管理后台，以及普通用户支付页面的 UI 制作。",
+      "role": "UI 制作",
+      "badge": "PAYMENT",
       "responsibilities": [
-        "基于 Flutter Widget 开发移动端 UI",
-        "实现移动端页面布局及响应式 UI",
-        "在 Android Emulator 环境中测试页面"
+        "参与管理员、合作伙伴和加盟商管理后台的 UI 制作",
+        "使用 HTML 和 CSS 实现数据搜索、查看和管理页面",
+        "制作面向普通用户的支付服务页面",
+        "实现类似 PayApp 支付流程的用户页面 UI"
       ]
     },
     "8": {
-      "title": "基于 Photoshop 的网页设计",
-      "description": "使用 Photoshop 进行网页设计和视觉内容制作",
-      "overview": "使用 Photoshop 完成 Web 服务所需的设计工作，并在设计过程中注重视觉完成度和用户体验。",
-      "role": "网页设计师",
-      "badge": "DESIGN",
+      "title": "电商网站建设与主题定制",
+      "description": "购物网站 UI 制作及 GnuBoard 主题定制",
+      "overview": "参与基于 Classic ASP 的 BerryMall 购物网站建设项目，负责用户页面制作，并对基于 GnuBoard 的购物网站主题进行定制。",
+      "role": "UI 制作",
+      "badge": "E-COMMERCE",
       "responsibilities": [
-        "使用 Photoshop 进行网页设计",
-        "设计网页布局及视觉元素",
-        "设计视觉元素、配色方案和字体排版"
+        "参与 BerryMall 购物网站的页面制作",
+        "使用 HTML、CSS 和 JavaScript 实现购物网站 UI",
+        "修改基于 GnuBoard 的购物网站主题布局和视觉设计",
+        "根据项目需求定制现有主题页面"
+      ]
+    },
+    "9": {
+      "title": "Flutter 支付应用 UI 开发",
+      "description": "将现有 Web 支付服务页面重新实现为 Flutter 移动应用",
+      "overview": "参与将现有基于 SvelteKit 的支付服务 Web 页面重新实现为 Flutter 移动应用的项目。参考原有 Web 页面，使用 Flutter Widget 开发移动端 UI，并通过 Android Emulator 测试页面。",
+      "role": "移动端 UI 开发",
+      "badge": "MOBILE",
+      "responsibilities": [
+        "使用 Flutter Widget 重新实现现有 SvelteKit Web 页面",
+        "开发适合移动端环境的页面布局和 UI 元素",
+        "使用 Android Emulator 测试并验证页面 UI"
       ]
     }
   },
-
   "_comment9": "=== 페이지 - ProjectDetail 번역  ===",
    "projectDetail": {
     "notFound": "未找到项目。",

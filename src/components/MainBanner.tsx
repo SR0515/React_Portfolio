@@ -7,10 +7,10 @@ export default function MainBanner() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-r from-[#252B36] via-[#303846] to-[#202733]">
-      <div className="relative mx-auto flex min-h-[420px] max-w-[1440px] items-center justify-between gap-10 px-6 py-14 sm:px-10 lg:min-h-[480px] lg:px-16">
+    <section className="relative w-full overflow-hidden bg-linear-to-r from-[#252B36] via-[#303846] to-[#202733]">
+      <div className="relative mx-auto flex min-h-105 max-w-360 items-center justify-between gap-10 px-6 py-14 sm:px-10 lg:min-h-120 lg:px-16">
         {/* 왼쪽 소개 영역 */}
-        <div className="relative z-10 max-w-[650px] flex-1">
+        <div className="relative z-10 max-w-162.5 flex-1">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold tracking-wider text-blue-300 shadow-sm backdrop-blur">
             <Code2 size={15} />
             {t('mainBanner.badge')}
@@ -29,7 +29,7 @@ export default function MainBanner() {
             </span>
           </h1>
 
-          <p className="mt-6 max-w-[560px] text-sm leading-8 text-gray-300 sm:text-base">
+          <p className="mt-6 max-w-140 text-sm leading-8 text-gray-300 sm:text-base">
             {t('mainBanner.greeting')}{' '}
             <strong className="font-bold text-white">김수린</strong>
             {t('mainBanner.nameSuffix')}
@@ -60,11 +60,11 @@ export default function MainBanner() {
 
         {/* 오른쪽 프로필 영역 */}
         <div className="relative hidden shrink-0 items-center justify-center md:flex">
-          <div className="relative rotate-2 rounded-[28px] border-[8px] border-white/90 bg-white p-2 shadow-2xl shadow-black/30 transition duration-500 hover:rotate-0">
+          <div className="relative rotate-2 rounded-[28px] border-8 border-white/90 bg-white p-2 shadow-2xl shadow-black/30 transition duration-500 hover:rotate-0">
             <img
               src={profileImage}
               alt="김수린 프로필"
-              className="h-[310px] w-[235px] rounded-[20px] object-cover"
+              className="h-77.5 w-58.75 rounded-[20px] object-cover"
             />
           </div>
 

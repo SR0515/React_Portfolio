@@ -159,16 +159,16 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end gap-3 font-sans">
+    <div className="fixed bottom-6 right-6 z-100 flex flex-col items-end gap-3 font-sans">
 
       {/* 챗봇 대화창 */}
       {isOpen && (
         <div
           className="
-            flex h-[620px] max-h-[calc(100dvh-110px)]
-            w-[calc(100vw-32px)] max-w-[410px]
+            flex h-155 max-h-[calc(100dvh-110px)]
+            w-[calc(100vw-32px)] max-w-102.5
             origin-bottom-right flex-col overflow-hidden
-            rounded-[24px] border border-gray-200
+            rounded-3xl border border-gray-200
             bg-white shadow-[0_12px_60px_rgba(15,23,42,0.16)]
             animate-[slideUp_0.25s_ease-out]
           "
@@ -247,7 +247,7 @@ export default function Chatbot() {
                     )}
 
                     <div
-                        className={`max-w-[82%] whitespace-pre-wrap break-words rounded-[18px] px-4 py-3 text-[13px] leading-[1.7] ${
+                        className={`max-w-[82%] whitespace-pre-wrap wrap-break-words rounded-[18px] px-4 py-3 text-[13px] leading-[1.7] ${
                         msg.role === 'user'
                             ? 'rounded-br-[5px] bg-[#346AFF] text-white'
                             : 'rounded-bl-[5px] border border-gray-100 bg-white text-[#333D4B]'

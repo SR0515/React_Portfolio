@@ -45,7 +45,7 @@ export default function ProjectCard({
     <article className="group overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:border-blue-200 hover:shadow-lg">
 
       {/* 프로젝트 이미지 슬라이드 */}
-      <div className="project-card-swiper relative aspect-[4/3] overflow-hidden bg-gray-100">
+      <div className="project-card-swiper relative aspect-4/3 overflow-hidden bg-gray-100">
         {images.length > 0 ? (
           <>
             <Swiper
@@ -142,7 +142,7 @@ export default function ProjectCard({
           <span>{t(project.role)}</span>
         </div>
 
-        <h3 className="mb-2 text-lg font-bold text-gray-900">
+        <h3 className="mb-2 text-lg font-bold text-gray-900 line-clamp-1 ">
           {t(project.title)}
         </h3>
 
@@ -151,7 +151,7 @@ export default function ProjectCard({
         </p>
 
         {/* 기술 스택 */}
-        <div className="mb-4 flex min-h-[54px] flex-wrap items-start gap-1.5">
+        <div className="mb-4 flex min-h-13.5 flex-wrap items-start gap-1.5">
           {project.stack.map((tech) => (
             <span
               key={tech}

@@ -103,7 +103,7 @@ export default function MyPage() {
         wishlistCount={wishlist.length}
       />
 
-      <main className="mx-auto max-w-[1200px] px-5 py-8">
+      <main className="mx-auto max-w-300 px-5 py-8">
         {/* 페이지 타이틀 */}
         <div className="mb-6">
           <p className="mb-1 text-sm font-medium text-[#346AFF]">
@@ -124,7 +124,7 @@ export default function MyPage() {
           id="overview"
           className="mb-6 overflow-hidden rounded-2xl bg-white shadow-sm"
         >
-          <div className="bg-gradient-to-r from-[#252B36] via-[#303846] to-[#202733] px-7 py-8 text-white sm:px-9">
+          <div className="bg-linear-to-r from-[#252B36] via-[#303846] to-[#202733] px-7 py-8 text-white sm:px-9">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
               <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full border-2 border-white/80">
                 <img
